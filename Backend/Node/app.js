@@ -8,5 +8,5 @@ servidor.use(bodyParser.urlencoded({extended:true}))
 servidor.use("/muestra",ruta)
 
 servidor.listen(3000,()=>{
-console.log("servidor escuchando desde el puerto 3000")
+console.log("servidor escuchando desde el puerto 3000...")
 })
