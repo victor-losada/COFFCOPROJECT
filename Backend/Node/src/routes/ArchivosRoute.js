@@ -4,7 +4,7 @@ const rutaArchivo = Router()
 
 rutaArchivo.get('/listar', listarArchivos)
 rutaArchivo.post('/registrar', registrarArchivos)
-rutaArchivo.delete('/eliminar/:id', eliminarArchivos)
-rutaArchivo.put('/actualizar/:id', actualizarArchivos)
+rutaArchivo.delete('/eliminar/:id_documentos', eliminarArchivos)
+rutaArchivo.put('/actualizar/:id_documentos', actualizarArchivos)
 
 export default rutaArchivo

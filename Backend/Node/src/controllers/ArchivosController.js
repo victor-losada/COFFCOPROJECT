@@ -34,7 +34,7 @@ export const registrarArchivos = async (req, res) => {
 
 export const eliminarArchivos = async (req, res) => {
     try {
-        let id_documentos = req.params.id
+        let id_documentos = req.params.id_documentos
 
         let sql = `delete from archivos where id_documentos = ${id_documentos}`
 
@@ -54,9 +54,9 @@ export const eliminarArchivos = async (req, res) => {
 export const actualizarArchivos = async (req, res) => {
     try {
         let {nombre, fecha_carga, estado, fk_id_usuarios, fk_id_formatos, descripcion} = req.body
-        let id = req.params.id
+        let id_documentos = req.params.id_documentos
         let sql = `update archivos set nombre = '${nombre}', fecha_carga = '${fecha_carga}', estado = '${estado}', 
-        fk_id_usuarios = '${fk_id_usuarios}', fk_id_formatos = '${fk_id_formatos}', descripcion = '${descripcion}' where id_documentos = ${id}`
+        fk_id_usuarios = '${fk_id_usuarios}', fk_id_formatos = '${fk_id_formatos}', descripcion = '${descripcion}' where id_documentos = ${id_documentos}`
 
         const [rows] = await conexion.query(sql)
         if(rows.affectedRows > 0){
