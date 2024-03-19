@@ -1,1 +1,1 @@
-console.log("hola mundo javascript")
+import { conexion } from "../database/conexion.js"
