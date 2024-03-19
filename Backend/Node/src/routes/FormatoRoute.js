@@ -4,7 +4,7 @@ const rutaFormato = Router()
 
 rutaFormato.get('/listar', listarFormatos)
 rutaFormato.post('/registrar', registrarFormatos)
-rutaFormato.delete('/eliminar/:id', eliminarFormatos)
-rutaFormato.put('/actualizar/:id', actualizarFormatos)
+rutaFormato.delete('/eliminar/:id_formato', eliminarFormatos)
+rutaFormato.put('/actualizar/:id_formato', actualizarFormatos)
 
 export default rutaFormato

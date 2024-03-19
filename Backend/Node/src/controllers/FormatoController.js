@@ -34,7 +34,7 @@ export const registrarFormatos = async (req, res) => {
 
 export const eliminarFormatos = async (req, res) => {
     try {
-        let id_formato = req.params.id
+        let id_formato = req.params.id_formato
 
         let sql = `delete from formato where id_formato = ${id_formato}`
 
@@ -54,9 +54,9 @@ export const eliminarFormatos = async (req, res) => {
 export const actualizarFormatos = async (req, res) => {
     try {
         let {version, editable, fk_id_tipo_formato, fk_id_usuarios} = req.body
-        let id = req.params.id
+        let id_formato = req.params.id_formato
         let sql = `update formato set version = '${version}', editable = '${editable}', fk_id_tipo_formato = '${fk_id_tipo_formato}', 
-        fk_id_usuarios = '${fk_id_usuarios}' where id_formato = ${id}`
+        fk_id_usuarios = '${fk_id_usuarios}' where id_formato = ${id_formato}`
 
         const [rows] = await conexion.query(sql)
         if(rows.affectedRows > 0){
