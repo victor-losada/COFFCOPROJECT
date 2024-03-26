@@ -15,6 +15,21 @@ export const listarUsuario = async (req,res)=>{
 
 }
 
+export const listarUsuarioId = async (req,res) => {
+    try {
+        let id = req.params.id
+        let sql =`select * from usuarios where id_usuario=${id}`
+        const [respuesta] = await conexion.query(sql)
+        if(respuesta.length==1){
+            res.status(200).json(respuesta)
+        }else{
+            res.status(404) .json({'message':'El usuario no existe'})
+        }
+    } catch (error) {
+        
+    }
+}
+
 export const registrarUsuario = async (req,res)=>{
     try {
         let{nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario}=req.body

@@ -17,7 +17,22 @@ servidor.use("/formato",FormatoRoute)
 
 
 servidor.listen(3000,()=>{
-console.log("servidor escuchando desde el puerto 3000")
+console.log("servidor escuchando desde el puerto 3000")
 })
-servidor.use('/usuario',rutaUsuario)
+
+
+
+
+
+
+
+
+
+
+
+
 import rutaUsuario from './src/routes/usuarioRoute.js'
+import rutaDetalle from "./src/routes/detalleRoute.js";
+
+servidor.use('/usuario',rutaUsuario)
+servidor.use('/detalle', rutaDetalle)
