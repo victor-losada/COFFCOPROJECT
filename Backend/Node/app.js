@@ -5,6 +5,7 @@ import ruta from "./src/routes/muestraRoutes.js";
 import ArchivosRoute from "./src/routes/ArchivosRoute.js"
 import FormatoRoute from './src/routes/FormatoRoute.js'
 import rutaUsuario from './src/routes/usuarioRoute.js'
+import rutaDetalle from "./src/routes/detalleRoute.js";
 
 const servidor = Express()
 servidor.use(bodyParser.json())
@@ -15,6 +16,7 @@ servidor.use("/muestra", ruta )
 servidor.use("/archivo",ArchivosRoute)
 servidor.use("/formato",FormatoRoute)
 servidor.use('/usuario',rutaUsuario)
+servidor.use('/detalle', rutaDetalle)
 
 
 servidor.listen(3000,()=>{
