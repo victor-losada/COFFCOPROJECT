@@ -23,5 +23,8 @@ console.log("servidor escuchando desde el puerto 3000")
 
 
 
+
+
+
 import rutaDetalle from "./src/routes/detalleRoute.js";
 servidor.use('/detalle', rutaDetalle)
