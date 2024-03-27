@@ -16,7 +16,7 @@ export const RegistrarDatos=async(req,res)=> {
         let sql = `insert into muestra(nombre,tipo,estado,fk_id_formato)
         values ('${nombre}','${tipo}','${estado},'${fk_id_formato}')`
         const [respuesta] = await conexion.query(sql)
-        if(respuesta.affectedRows > 0){
+        if(respuesta.affectedRows>0){
             return res.status(200).json({"menssage":"se registro correctamente el usuario"})
         }
         else {
