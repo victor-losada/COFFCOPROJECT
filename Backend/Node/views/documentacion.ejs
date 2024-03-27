@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>documentacion Api</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 
+archivos =daniel
+datos  = victor
+detalle = jonathan 
+finca= daniel
+formato =daniel
+muestra = Miguel
+municipio= luisa
+servicios= juan
+tipo_formato =juan
+usuarios = jhontan
+ -->
+    <h1>Documentacio de la api</h1>
+      <!-- crud muestra Miguel -->
+      <section>
+        <table>
+            <thead>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tabla muestra 01</td>
+                    <td> 
+                    <p>
+                        este apartado se registrar listar,listarID, elimina , actualiza los datos de la tabla muestra 
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/muestra/registrar</td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td>Esta funcion permite registrar nuevos datos  en la tabla muestra de la base de datos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>POST</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>null</td>
+                </tr>
+                <tr>
+                    <td>Usuario</td>
+                    <td>Administrador,encargados</td>
+                </tr>
+                <tr>
+                    <td>Peticion Body</td>
+                    <td>json: {
+                        "cantidad":30.66,
+                        "fk_id_finca":1
+                    }
+                    </td>
+                </tr>
+                <tr>
+                    <td>Respuesta Json</td>
+                    <td>Correcto: status:200.json({	"menssage": "se registro correctamente"}) <br><br>
+                        Incorrecto: status(404).json({"message":"no se registro correctamente"}) <br><br>
+                        Error: status(500).json({"message":"error al conectar con la base de datos"+error.message})
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table>
+            <thead>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tabla muestra 01</td>
+                    <td> 
+                    <p>
+                        este apartado se registrar listar,listarID, elimina , actualiza los datos de la tabla muestra 
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/muestra/listar</td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td>Esta funcion permite listar  datos  en la tabla muestra de la base de datos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>null</td>
+                </tr>
+                <tr>
+                    <td>Usuario</td>
+                    <td>Administrador,encargados</td>
+                </tr>
+                <tr>
+                    <td>Peticion Body</td>
+                    <td>null
+                    </td>
+                </tr>
+                <tr>
+                    <td>Respuesta Json</td>
+                    <td>Correcto: status:200.json({	"menssage": "	{
+                        "id_muestra": 12,
+                        "cantidad": 30.66,
+                        "fk_id_finca": 1
+                    },"}) <br><br>
+                        Incorrecto: status(404).json({"menssage":"no se pudo listar correctamente"}) <br><br>
+                        Error: status(500).json({"menssage":"error en la conexion"+error.menssage})
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table>
+            <thead>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tabla muestra 01</td>
+                    <td> 
+                    <p>
+                        este apartado se registrar listar,listarID, elimina , actualiza los datos de la tabla muestra 
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/muestra/listarid/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td>Esta funcion permite listar  datos por el id  de la tabla muestra de la base de datos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>null</td>
+                </tr>
+                <tr>
+                    <td>Usuario</td>
+                    <td>Administrador,encargados</td>
+                </tr>
+                <tr>
+                    <td>Peticion Body</td>
+                    <td>null
+                    </td>
+                </tr>
+                <tr>
+                    <td>Respuesta Json</td>
+                    <td>Correcto: status:200.json({	"menssage": "{
+                        "id_muestra": 12,
+                        "cantidad": 30.66,
+                        "fk_id_finca": 1
+                    },"}) <br><br>
+                        Incorrecto: status(404).json({"message":"dato no encontrado"}) <br><br>
+                        Error: status(500).json({"menssage":"error en la conexion"+error.menssage})
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table>
+            <thead>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tabla muestra 01</td>
+                    <td> 
+                    <p>
+                        este apartado se registrar listar,listarID, eliminar , actualiza los datos de la tabla muestra 
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/muestra/listarid/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td>Esta funcion permite eliminar  datos por el id  de la tabla muestra de la base de datos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>DELETE</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>null</td>
+                </tr>
+                <tr>
+                    <td>Usuario</td>
+                    <td>Administrador,encargados</td>
+                </tr>
+                <tr>
+                    <td>Peticion Body</td>
+                    <td>null
+                    </td>
+                </tr>
+                <tr>
+                    <td>Respuesta Json</td>
+                    <td>Correcto: status:200.json({	"message":"dato eliminado correctamente"}) <br><br>
+                        Incorrecto: status(404).json({"message":"dato  no se elimino correctamente"}) <br><br>
+                        Error: status(500).json({"message":"error en la conexion"+error.menssage})
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table>
+            <thead>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tabla muestra 01</td>
+                    <td> 
+                    <p>
+                        este apartado se registrar listar,listarID, eliminar , actualiza los datos de la tabla muestra 
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/muestra/actualizar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td>Esta funcion permite actualizar  datos por el id  de la tabla muestra de la base de datos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>PUT</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>null</td>
+                </tr>
+                <tr>
+                    <td>Usuario</td>
+                    <td>Administrador,encargados</td>
+                </tr>
+                <tr>
+                    <td>Peticion Body</td>
+                    <td>json:{
+                        "id_muestra":12,
+                            "cantidad":50.3,
+                            "fk_id_finca":1
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>Respuesta Json</td>
+                    <td>Correcto: status:200.json({
+                        message":"se actualizo con exito "}) <br><br>
+                        Incorrecto: status(404).json({"message":"no se actualizo correctamente}) <br><br>
+                        Error: status(500).json({"message":"error en la conexion"+error.menssage})
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+     
+</body>
+</html>
