@@ -6,6 +6,7 @@ import ArchivosRoute from "./src/routes/ArchivosRoute.js"
 import FormatoRoute from './src/routes/FormatoRoute.js'
 import rutaUsuario from './src/routes/usuarioRoute.js'
 import rutaDetalle from "./src/routes/detalleRoute.js";
+import rutaFinca from "./src/routes/FincaRoute.js";
 import cors from "cors"
 
 
@@ -16,16 +17,18 @@ servidor.set('view engine','ejs')
 servidor.set('views','./views')
 servidor.use(Express.static('./public'))
 servidor.use(cors())
+
 servidor.use('/documents',(req,res)=>{
     res.render('documentacion.ejs')
 })
+
 servidor.use("/municipio",rutaMunicipio)
 servidor.use("/muestra", ruta )
 servidor.use("/archivo",ArchivosRoute)
 servidor.use("/formato",FormatoRoute)
 servidor.use('/usuario',rutaUsuario)
 servidor.use('/detalle', rutaDetalle)
-
+servidor.use('/finca',rutaFinca)
 
 servidor.listen(3000,()=>{
 console.log("servidor escuchando desde el puerto 3000")
