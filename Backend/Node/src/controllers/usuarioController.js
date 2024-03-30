@@ -32,9 +32,9 @@ export const listarUsuarioId = async (req,res) => {
 
 export const registrarUsuario = async (req,res)=>{
     try {
-        let{nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario}=req.body
-        let sql = `insert into usuarios (nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario)
-        value('${nombre_usuario}','${apellido_usuario}','${correo_electronico}','${telefono_usuario}','${rol_usuario}','${contraseña_usuario}')`;
+        let{nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario,numero_identificacion}=req.body
+        let sql = `insert into usuarios (nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario,numero_identificacion)
+        value('${nombre_usuario}','${apellido_usuario}','${correo_electronico}','${telefono_usuario}','${rol_usuario}','${contraseña_usuario}','${numero_identificacion}')`;
         const [respuesta]=await conexion.query(sql)
         if(respuesta.affectedRows>0){
             res.status(200).json({'message':'Se registro el usuario con exito'})
@@ -64,8 +64,10 @@ export const eliminarUsuario = async (req,res)=>{
 export const actualizarUsuario = async (req,res)=>{
     try {
         let id=req.params.id
-        let {id_usuario,nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario}=req.body
-        let sql=`update usuarios set nombre_usuario='${nombre_usuario}', apellido_usuario='${apellido_usuario}', correo_electronico='${correo_electronico}', telefono_usuario='${telefono_usuario}',rol_usuario='${rol_usuario}', contraseña_usuario='${contraseña_usuario}' where id_usuario='${id}'`
+        let {nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario,numero_identificacion}=req.body
+        let sql=`update usuarios set nombre_usuario='${nombre_usuario}', apellido_usuario='${apellido_usuario}',
+         correo_electronico='${correo_electronico}', telefono_usuario='${telefono_usuario}',rol_usuario='${rol_usuario}', 
+         contraseña_usuario='${contraseña_usuario}',${numero_identificacion}where id_usuario='${id}'`
         const [respuesta]= await conexion.query(sql)
 
         if(respuesta.affectedRows>0){

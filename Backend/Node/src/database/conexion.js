@@ -4,5 +4,5 @@ export  const conexion = createPool({
     user:'root',
     password:'',
     port:3306,
-    database:'coffco'
-})
+    database:'coffco_proyecto'
+})  
