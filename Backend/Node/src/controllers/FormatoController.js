@@ -15,22 +15,22 @@ export const listarFormatos = async (req, res) => {
 
 export const registrarFormatos = async (req, res) => {
     try {
-        let {version, editable, fk_id_tipo_formato, fk_id_usuarios} = req.body
+        const { version, editable, fk_id_tipo_formato, fk_id_usuarios } = req.body;
 
-        let sql = `insert into archivos (version, editable, fk_id_tipo_formato, fk_id_usuarios)
-        values ('${version}','${editable}','${fk_id_tipo_formato}','${fk_id_usuarios}')`
-        const [rows] = await conexion.query(sql)
-        if(rows.affectedRows > 0){
-            return res.status(200).json({"message":"Se registró con éxito el formato"})
-        } 
-        else {
-            return res.status(404).json({"message":"No se registró ningun formato."})
+        const sql = `INSERT INTO formato (version, editable, fk_id_tipo_formato, fk_id_usuarios) VALUES (?, ?, ?, ?)`;
+        const values = [version, editable, fk_id_tipo_formato, fk_id_usuarios];
+
+        const [rows] = await conexion.query(sql, values);
+
+        if (rows.affectedRows > 0) {
+            return res.status(200).json({ "message": "Se registró con éxito el formato" });
+        } else {
+            return res.status(404).json({ "message": "No se registró ningún formato." });
         }
+    } catch (e) {
+        return res.status(500).json({ "message": "Error: " + e.message });
     }
-    catch(e){
-        return res.status(500).json({"message":"error "+e.message})
-    }
-}
+};
 
 export const eliminarFormatos = async (req, res) => {
     try {
