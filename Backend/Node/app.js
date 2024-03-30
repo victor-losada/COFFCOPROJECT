@@ -4,7 +4,6 @@ import rutaMunicipio from "./src/routes/municipioRoute.js";
 import ruta from "./src/routes/muestraRoutes.js";
 import ArchivosRoute from "./src/routes/ArchivosRoute.js"
 import FormatoRoute from './src/routes/FormatoRoute.js'
-import rutaFinca from "./src/routes/FincaRoute.js";
 import rutaUsuario from './src/routes/usuarioRoute.js'
 import rutaDetalle from "./src/routes/detalleRoute.js";
 import cors from "cors"
@@ -26,7 +25,6 @@ servidor.use("/archivo",ArchivosRoute)
 servidor.use("/formato",FormatoRoute)
 servidor.use('/usuario',rutaUsuario)
 servidor.use('/detalle', rutaDetalle)
-servidor.use('/finca', rutaFinca)
 
 
 servidor.listen(3000,()=>{
