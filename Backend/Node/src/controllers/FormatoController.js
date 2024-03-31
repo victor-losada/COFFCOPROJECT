@@ -13,7 +13,7 @@ export const listarFormatos = async (req, res) => {
     }
 }
 
-export const registrarFormatos = async (req, res) => {
+export const registrarFormatos = async (req, res) => { 
     try {
         const { version, editable, fk_id_tipo_formato, fk_id_usuarios } = req.body;
 
