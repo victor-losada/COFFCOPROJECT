@@ -18,11 +18,11 @@ municipio= luisa
 servicios= juan
 tipo_formato =juan
 usuarios = jhontan
- -->
+-->
     <h1 class="principal">Documentación de la api</h1>
     <div class="container">
-      <!-- crud muestra Miguel -->
-      <section>
+    <!-- crud muestra Miguel -->
+    <section>
         <h1 class="titulo">Muestra</h1>
         <div class="table-container">
         <table>
@@ -76,7 +76,7 @@ usuarios = jhontan
                 </tr>
             </tbody>
         </table>
-         </div>
+        </div>
 
         <br>
 
@@ -302,7 +302,279 @@ usuarios = jhontan
             </tbody>
         </table>
     </div>
+    <br>
+    <!-- crud detalles Jonathan -->
+    <section>
+        <h1>Detalle</h1>
+        <!-- detalle listar -->
+        <h2>Listar Detalle</h2>
+        <div>
+        <table>
+            <thead>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Numero</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Nombre del EndPoint</td>
+                    <td>Listar detalle</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/detalle/listar</td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td>Esta funcion permite listar todos los datos registrados en la tabla detalle de la base de datos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>NULL</td>
+                </tr>
+                <tr>
+                    <td>Usuario</td>
+                    <td>Administrador,encargados</td>
+                </tr>
+                <tr>
+                    <td>Peticion Body</td>
+                    <td>NULL
+                    </td>
+                </tr>
+                <tr>
+                    <td>Respuesta Json</td>
+                    <td>Correcto: status:200.json(respuesta) <br><br>
+                        Incorrecto: status(404).json({"message":"No hay datos registrados"}) <br><br>
+                        Error: status(500).json({message:'Error en el servidor'+error.message})
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
 
+        <br>
+        <!-- detalle listar/id -->
+        <h2>Listar por ID Detalle</h2>
+        <div>
+            <table>
+                <thead>
+                    <td>Nombre</td>
+                    <td>Descripcion</td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Numero</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre del EndPoint</td>
+                        <td>Listar detalle por Id</td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>http://localhost:3000/detalle/listar/:id</td>
+                    </tr>
+                    <tr>
+                        <td>Descripcion</td>
+                        <td>Esta funcion permite listar dato por Id registrados en la tabla detalle de la base de datos</td>
+                    </tr>
+                    <tr>
+                        <td>Verbo HTTP</td>
+                        <td>GET</td>
+                    </tr>
+                    <tr>
+                        <td>Header</td>
+                        <td>NULL</td>
+                    </tr>
+                    <tr>
+                        <td>Usuario</td>
+                        <td>Administrador,encargados</td>
+                    </tr>
+                    <tr>
+                        <td>Peticion Body</td>
+                        <td>id
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Respuesta Json</td>
+                        <td>Correcto: status:200.json(respuesta) <br><br>
+                            Incorrecto: status(404).json({"message":"El dato no existe"}) <br><br>
+                            Error: status(500).json({message:'Error en el servidor'+error.message})
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <br>
+        <!-- detalle registrar -->
+        <h2>Registrar Detalle</h2>
+        <div>
+            <table>
+                <thead>
+                    <td>Nombre</td>
+                    <td>Descripcion</td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Numero</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre del EndPoint</td>
+                        <td>Registrar detalle</td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>http://localhost:3000/detalle/registrar</td>
+                    </tr>
+                    <tr>
+                        <td>Descripcion</td>
+                        <td>Esta funcion permite registrar un nuevo dato en la tabla detalle de la base de datos</td>
+                    </tr>
+                    <tr>
+                        <td>Verbo HTTP</td>
+                        <td>POST</td>
+                    </tr>
+                    <tr>
+                        <td>Header</td>
+                        <td>NULL</td>
+                    </tr>
+                    <tr>
+                        <td>Usuario</td>
+                        <td>Administrador,encargados</td>
+                    </tr>
+                    <tr>
+                        <td>Peticion Body</td>
+                        <td>json:{fk_id_formato,fk_id_datos,valor,fk_id_servicios}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Respuesta Json</td>
+                        <td>Correcto: status:200.json({message:'Dato ingresado con exito'}) <br><br>
+                            Incorrecto: status(404).json({'Datos no registrados'}) <br><br>
+                            Error: status(500).json({message:'Error en el servidor'+error.message})
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+        <!-- detalle actualizar -->
+        <h2>Actualizar Detalle</h2>
+        <div>
+            <table>
+                <thead>
+                    <td>Nombre</td>
+                    <td>Descripcion</td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Numero</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre del EndPoint</td>
+                        <td>Actualizar detalle</td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>http://localhost:3000/detalle/actualizar/:id</td>
+                    </tr>
+                    <tr>
+                        <td>Descripcion</td>
+                        <td>Esta funcion permite actualizar un dato en la tabla detalle de la base de datos</td>
+                    </tr>
+                    <tr>
+                        <td>Verbo HTTP</td>
+                        <td>PUT</td>
+                    </tr>
+                    <tr>
+                        <td>Header</td>
+                        <td>NULL</td>
+                    </tr>
+                    <tr>
+                        <td>Usuario</td>
+                        <td>Administrador,encargados</td>
+                    </tr>
+                    <tr>
+                        <td>Peticion Body</td>
+                        <td>json:{fk_id_formato,fk_id_datos,valor,fk_id_servicios}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Respuesta Json</td>
+                        <td>Correcto: status:200.json({message: 'Datos actualizados con exito'}) <br><br>
+                            Incorrecto: status(404).json({message: 'Datos no actualizados'}) <br><br>
+                            Error: status(500).json({message:'Error en el servidor'+error.message})
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+        <!-- detalle eliminar -->
+        <h2>Eliminar Detalle</h2>
+        <div>
+            <table>
+                <thead>
+                    <td>Nombre</td>
+                    <td>Descripcion</td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Numero</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre del EndPoint</td>
+                        <td>Eliminar detalle</td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>http://localhost:3000/detalle/eliminar/:id</td>
+                    </tr>
+                    <tr>
+                        <td>Descripcion</td>
+                        <td>Esta funcion permite eliminar un dato en la tabla detalle de la base de datos</td>
+                    </tr>
+                    <tr>
+                        <td>Verbo HTTP</td>
+                        <td>DELETE</td>
+                    </tr>
+                    <tr>
+                        <td>Header</td>
+                        <td>NULL</td>
+                    </tr>
+                    <tr>
+                        <td>Usuario</td>
+                        <td>Administrador,encargados</td>
+                    </tr>
+                    <tr>
+                        <td>Peticion Body</td>
+                        <td>NULL
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Respuesta Json</td>
+                        <td>Correcto: status:200.json({message: 'Datos eliminados con exito'}) <br><br>
+                            Incorrecto: status(404).json({message:'Error al eliminar datos'}) <br><br>
+                            Error: status(500).json({message:'Error en el servidor'+error.message})
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
   <br>
     <!-- crud archivo Daniel -->
@@ -1307,6 +1579,281 @@ usuarios = jhontan
                     </tbody>
                 </table>
                 </div>
+
+                <br>
+
+    <!-- crud usuarios Jonathan -->
+    <section>
+        <h1>Usuarios</h1>
+        <!-- usuarios listar -->
+        <h2>Listar Usuarios</h2>
+        <div>
+        <table>
+            <thead>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Numero</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Nombre del EndPoint</td>
+                    <td>Listar usuarios</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/usuario/listar</td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td>Esta funcion permite listar todos los usuarios registrados en la tabla usuarios de la base de datos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>NULL</td>
+                </tr>
+                <tr>
+                    <td>Usuario</td>
+                    <td>Administrador,encargados</td>
+                </tr>
+                <tr>
+                    <td>Peticion Body</td>
+                    <td>NULL
+                    </td>
+                </tr>
+                <tr>
+                    <td>Respuesta Json</td>
+                    <td>Correcto: status:200.json(resultado) <br><br>
+                        Incorrecto: status(404).json({message:'No se encontraron usuarios'}) <br><br>
+                        Error: status(500).json({message:'Error en el servidor'+error.message})
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <br>
+        <!-- usuarios listar/id -->
+        <h2>Listar por ID Usuario</h2>
+        <div>
+            <table>
+                <thead>
+                    <td>Nombre</td>
+                    <td>Descripcion</td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Numero</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre del EndPoint</td>
+                        <td>Listar usuarios por Id</td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>http://localhost:3000/usuario/listar/:id</td>
+                    </tr>
+                    <tr>
+                        <td>Descripcion</td>
+                        <td>Esta funcion permite listar un usuario por Id registrado en la tabla usuarios de la base de datos</td>
+                    </tr>
+                    <tr>
+                        <td>Verbo HTTP</td>
+                        <td>GET</td>
+                    </tr>
+                    <tr>
+                        <td>Header</td>
+                        <td>NULL</td>
+                    </tr>
+                    <tr>
+                        <td>Usuario</td>
+                        <td>Administrador,encargados</td>
+                    </tr>
+                    <tr>
+                        <td>Peticion Body</td>
+                        <td>id
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Respuesta Json</td>
+                        <td>Correcto: status:200.json(respuesta) <br><br>
+                            Incorrecto: status(404).json({"message":"El usuario no existe"}) <br><br>
+                            Error: status(500).json({message:'Error en el servidor'+error.message})
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <br>
+        <!-- usuarios registrar -->
+        <h2>Registrar Usuario</h2>
+        <div>
+            <table>
+                <thead>
+                    <td>Nombre</td>
+                    <td>Descripcion</td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Numero</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre del EndPoint</td>
+                        <td>Registrar usuario</td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>http://localhost:3000/usuario/registrar</td>
+                    </tr>
+                    <tr>
+                        <td>Descripcion</td>
+                        <td>Esta funcion permite registrar un nuevo usuario en la tabla usuarios de la base de datos</td>
+                    </tr>
+                    <tr>
+                        <td>Verbo HTTP</td>
+                        <td>POST</td>
+                    </tr>
+                    <tr>
+                        <td>Header</td>
+                        <td>NULL</td>
+                    </tr>
+                    <tr>
+                        <td>Usuario</td>
+                        <td>Administrador,encargados</td>
+                    </tr>
+                    <tr>
+                        <td>Peticion Body</td>
+                        <td>json:{nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario,numero_identificacion}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Respuesta Json</td>
+                        <td>Correcto: status:200.json({message:'Se registro el usuario con exito'}) <br><br>
+                            Incorrecto: status(404).json({message:'No se pudo registrar el usuario'}) <br><br>
+                            Error: status(500).json({message:'Error en el servidor'+error.message})
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+        <!-- detalle actualizar -->
+        <h2>Actualizar Usuario</h2>
+        <div>
+            <table>
+                <thead>
+                    <td>Nombre</td>
+                    <td>Descripcion</td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Numero</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre del EndPoint</td>
+                        <td>Actualizar usuario</td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>http://localhost:3000/usuario/actualizar/:id</td>
+                    </tr>
+                    <tr>
+                        <td>Descripcion</td>
+                        <td>Esta funcion permite actualizar un usuario en la tabla usuarios de la base de datos</td>
+                    </tr>
+                    <tr>
+                        <td>Verbo HTTP</td>
+                        <td>PUT</td>
+                    </tr>
+                    <tr>
+                        <td>Header</td>
+                        <td>NULL</td>
+                    </tr>
+                    <tr>
+                        <td>Usuario</td>
+                        <td>Administrador,encargados</td>
+                    </tr>
+                    <tr>
+                        <td>Peticion Body</td>
+                        <td>json:{nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario,numero_identificacion}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Respuesta Json</td>
+                        <td>Correcto: status:200.json({message:'Usuario actualizo'}) <br><br>
+                            Incorrecto: status(404).json({message:'Usuario no actualizado'}) <br><br>
+                            Error: status(500).json({message:'Error en el servidor'+error.message})
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+        <!-- detalle eliminar -->
+        <h2>Eliminar Usuario</h2>
+        <div>
+            <table>
+                <thead>
+                    <td>Nombre</td>
+                    <td>Descripcion</td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Numero</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre del EndPoint</td>
+                        <td>Eliminar usuario</td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>http://localhost:3000/usuario/eliminar/:id</td>
+                    </tr>
+                    <tr>
+                        <td>Descripcion</td>
+                        <td>Esta funcion permite eliminar un usuario en la tabla usuarios de la base de datos</td>
+                    </tr>
+                    <tr>
+                        <td>Verbo HTTP</td>
+                        <td>DELETE</td>
+                    </tr>
+                    <tr>
+                        <td>Header</td>
+                        <td>NULL</td>
+                    </tr>
+                    <tr>
+                        <td>Usuario</td>
+                        <td>Administrador,encargados</td>
+                    </tr>
+                    <tr>
+                        <td>Peticion Body</td>
+                        <td>id
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Respuesta Json</td>
+                        <td>Correcto: status:200.json({'message':'El usuario se elimiino con exito'}) <br><br>
+                            Incorrecto: status(404).json({'message':'Error'+error.message}) <br><br>
+                            Error: status(500).json({message:'Error en el servidor'+error.message})
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
     </section> 
 </div>
 </body>
