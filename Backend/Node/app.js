@@ -7,6 +7,7 @@ import FormatoRoute from './src/routes/FormatoRoute.js';
 import rutaUsuario from './src/routes/usuarioRoute.js';
 import rutaDetalle from "./src/routes/detalleRoute.js";
 import rutaFinca from "./src/routes/FincaRoute.js";
+import rutaDatos from "./src/routes/DatosRouters.js";
 import cors from "cors"; 
 
 const servidor = express(); 
@@ -29,6 +30,7 @@ servidor.use("/formato", FormatoRoute);
 servidor.use('/usuario', rutaUsuario);
 servidor.use('/detalle', rutaDetalle);
 servidor.use('/finca', rutaFinca);
+servidor.use('/datos', rutaDatos);
 
 servidor.listen(3000, () => {
     console.log("servidor escuchando desde el puerto 3000");
