@@ -6,8 +6,8 @@ const rutaUsuario= Router()
 rutaUsuario.get('/listar',listarUsuario)
 rutaUsuario.get('/listar/:id', listarUsuarioId)
 rutaUsuario.post('/registrar',registrarUsuario)
-rutaUsuario.delete('/eliminar/:id', eliminarUsuario)
 rutaUsuario.put('/actualizar/:id',actualizarUsuario)
+rutaUsuario.delete('/eliminar/:id', eliminarUsuario)
 
 
 export default rutaUsuario
