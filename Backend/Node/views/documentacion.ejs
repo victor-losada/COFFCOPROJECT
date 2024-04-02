@@ -19,9 +19,12 @@ servicios= juan
 tipo_formato =juan
 usuarios = jhontan
  -->
-    <h1>Documentacio de la api</h1>
+    <h1 class="principal">Documentación de la api</h1>
+    <div class="container">
       <!-- crud muestra Miguel -->
       <section>
+        <h1 class="titulo">Muestra</h1>
+        <div class="table-container">
         <table>
             <thead>
                 <td>Nombre</td>
@@ -73,7 +76,11 @@ usuarios = jhontan
                 </tr>
             </tbody>
         </table>
+         </div>
+
         <br>
+
+        <div class="table-container">
         <table>
             <thead>
                 <td>Nombre</td>
@@ -126,7 +133,11 @@ usuarios = jhontan
                 </tr>
             </tbody>
         </table>
+    </div>
+
         <br>
+
+        <div class="table-container">
         <table>
             <thead>
                 <td>Nombre</td>
@@ -179,7 +190,11 @@ usuarios = jhontan
                 </tr>
             </tbody>
         </table>
+    </div>
+
         <br>
+
+        <div class="table-container">
         <table>
             <thead>
                 <td>Nombre</td>
@@ -228,7 +243,11 @@ usuarios = jhontan
                 </tr>
             </tbody>
         </table>
+    </div>
+
         <br>
+
+        <div class="table-container">
         <table>
             <thead>
                 <td>Nombre</td>
@@ -282,9 +301,1013 @@ usuarios = jhontan
                 </tr>
             </tbody>
         </table>
+    </div>
 
-    </section>
 
-     
+  <br>
+    <!-- crud archivo Daniel -->
+    <h1 class="titulo">Archivos</h1>
+    <div class="table-container">
+        <table>
+            <thead>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tabla archivos 01</td>
+                    <td> 
+                    <p>
+                        este apartado es para registrar, listar, eliminar y actualizar los datos de la tabla archivos
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/archivo/registrar</td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td>Esta funcion permite registrar nuevos datos en la tabla archivos de la base de datos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>POST</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>null</td>
+                </tr>
+                <tr>
+                    <td>Usuario</td>
+                    <td>Administrador,encargados</td>
+                </tr>
+                <tr>
+                    <td>Peticion Body</td>
+                    <td>
+                        { <br>
+                            "nombre": "trilla documento", <br>
+                            "fecha_carga": "2024-03-17T05", <br>
+                            "estado": 1, <br>
+                            "fk_id_usuarios": 1, <br>
+                            "fk_id_formatos": 1, <br>
+                            "descripcion": "documento informativo de trilla" <br>
+                        } <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Respuesta Json</td>
+                    <td>Correcto: status:200.json({	"message":"Se registró con éxito el archivo"}) <br><br>
+                        Incorrecto: status(404).json({"message":"No se registró el archivo."}) <br><br>
+                        Error: status(500).json({"message":"error "+e.message})
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <br>
+
+        <div class="table-container">
+        <table>
+            <thead>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tabla archivos 01</td>
+                    <td> 
+                    <p>
+                        este apartado es para registrar listar, eliminar, actualizar los datos de la tabla archivos 
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/archivos/listar</td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td>Esta funcion permite listar datos en la tabla archivos de la base de datos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>null</td>
+                </tr>
+                <tr>
+                    <td>Usuario</td>
+                    <td>Administrador,encargados</td>
+                </tr>
+                <tr>
+                    <td>Peticion Body</td>
+                    <td>null
+                    </td>
+                </tr>
+                <tr>
+                    <td>Respuesta Json</td>
+                    <td>Correcto: status:200.json[<br>
+                        {<br>
+                            "id_documentos": 2, <br>
+                            "nombre": "tostion documento", <br>
+                            "fecha_carga": "2024-03-12T05:00:00.000Z", <br>
+                            "estado": 1, <br>
+                            "fk_id_usuarios": 1, <br>
+                            "fk_id_formatos": 1, <br>
+                            "descripcion": "documento informativo de tostion" <br>
+                        } <br>
+                    ] <br>
+                        Incorrecto: status(404).json({"message" : "No se encontraron archivos en la base de datos"}) <br><br>
+                        Error: status(500).json({"message" : "Error en el controlador ArchivoController.js " + err})
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <br>
+        
+        <div class="table-container">
+        <table>
+            <thead>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tabla archivos 01</td>
+                    <td> 
+                    <p>
+                        este apartado se para registrar, listar, eliminar, actualizar los datos de la tabla archivos 
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/archivo/eliminar/:id_documentos</td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td>Esta funcion permite eliminar datos por el id  de la tabla archivos de la base de datos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>DELETE</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>null</td>
+                </tr>
+                <tr>
+                    <td>Usuario</td>
+                    <td>Administrador,encargados</td>
+                </tr>
+                <tr>
+                    <td>Peticion Body</td>
+                    <td>null
+                    </td>
+                </tr>
+                <tr>
+                    <td>Respuesta Json</td>
+                    <td>Correcto: status:200.json({	"message":"Se eliminó con éxito el archivo."}) <br><br>
+                        Incorrecto: status(404).json({"message":"No se eliminó el archivo."}) <br><br>
+                        Error: status(500).json({"message":"error "+e.message})
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <br>
+
+        <div class="table-container">
+        <table>
+            <thead>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tabla archivos 01</td>
+                    <td> 
+                    <p>
+                        este apartado es para registrar listar, eliminar, actualizar los datos de la tabla archivos
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/archivo/actualizar/:id_documentos</td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td>Esta funcion permite actualizar datos por el id  de la tabla archivos de la base de datos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>PUT</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>null</td>
+                </tr>
+                <tr>
+                    <td>Usuario</td>
+                    <td>Administrador,encargados</td>
+                </tr>
+                <tr>
+                    <td>Peticion Body</td>
+                    <td>
+                        { <br>
+                            "id_documentos": 3, <br>
+                            "nombre": "tostión documento", <br>
+                            "fecha_carga": "2024-10-27", <br>
+                            "estado": 1, <br>
+                            "fk_id_usuarios": 1, <br>
+                            "fk_id_formatos": 1, <br>
+                            "descripcion": "documento informativo de tostión" <br>
+                        } <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Respuesta Json</td>
+                    <td>Correcto: status:200.json({
+                        message":"message":"Se actualizó con éxito el archivo."}) <br><br>
+                        Incorrecto: status(404).json({"message":"No se actualizó el archivo."}) <br><br>
+                        Error: status(500).json({"message":"error "+e.message })
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+       
+        <br>
+          <!-- crud finca Daniel -->
+          <h1 class="titulo">Finca</h1>
+          <div class="table-container">
+              <table>
+                  <thead>
+                      <td>Nombre</td>
+                      <td>Descripcion</td>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>tabla finca 01</td>
+                          <td> 
+                          <p>
+                              este apartado es para registrar, listar, eliminar y actualizar los datos de la tabla finca
+                          </p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>URL</td>
+                          <td>http://localhost:3000/finca/registrar</td>
+                      </tr>
+                      <tr>
+                          <td>Descripcion</td>
+                          <td>Esta funcion permite registrar nuevos datos en la tabla finca de la base de datos</td>
+                      </tr>
+                      <tr>
+                          <td>Verbo HTTP</td>
+                          <td>POST</td>
+                      </tr>
+                      <tr>
+                          <td>Header</td>
+                          <td>null</td>
+                      </tr>
+                      <tr>
+                          <td>Usuario</td>
+                          <td>Administrador,encargados</td>
+                      </tr>
+                      <tr>
+                          <td>Peticion Body</td>
+                          <td>json: { <br>
+                              "nombre_finca": "Nombre de la finca", <br>
+                              "fk_id_municipio": 1, <br>
+                              "fk_id_usuario": 1 <br>
+                            } <br>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>Respuesta Json</td>
+                          <td>Correcto: status:200.json({	"message": "Se registró con éxito la finca"}) <br><br>
+                              Incorrecto: status(404).json({"message":"No se registró la finca."}) <br><br>
+                              Error: status(500).json({"message":"error "+e.message})
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+              </div>
+
+              <br>
+
+              <div class="table-container">
+              <table>
+                  <thead>
+                      <td>Nombre</td>
+                      <td>Descripcion</td>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>tabla finca 01</td>
+                          <td> 
+                          <p>
+                              este apartado es para registrar listar, eliminar, actualizar los datos de la tabla finca 
+                          </p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>URL</td>
+                          <td>http://localhost:3000/finca/listar</td>
+                      </tr>
+                      <tr>
+                          <td>Descripcion</td>
+                          <td>Esta funcion permite listar  datos  en la tabla finca de la base de datos</td>
+                      </tr>
+                      <tr>
+                          <td>Verbo HTTP</td>
+                          <td>GET</td>
+                      </tr>
+                      <tr>
+                          <td>Header</td>
+                          <td>null</td>
+                      </tr>
+                      <tr>
+                          <td>Usuario</td>
+                          <td>Administrador,encargados</td>
+                      </tr>
+                      <tr>
+                          <td>Peticion Body</td>
+                          <td>null
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>Respuesta Json</td>
+                          <td>Correcto: status:200.json[<br>
+                              {<br>
+                                  "id_finca": 1, <br>
+                                  "nombre_finca": "Finca El Paraíso", <br>
+                                  "fk_id_municipio": 1, <br>
+                                  "fk_id_usuario": 1 <br>
+                              }, <br>
+                              { <br>
+                                  "id_finca": 2, <br>
+                                  "nombre_finca": "Nombre de la finca", <br>
+                                  "fk_id_municipio": 1, <br>
+                                  "fk_id_usuario": 1 <br>
+                              } <br>
+                          ] <br>
+                              Incorrecto: status(404).json({"message" : "No se encontraron fincas en la base de datos"}) <br><br>
+                              Error: status(500).json({"message" : "Error en el controlador FincaController.js "})
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+              </div>
+
+              <br>
+              
+              <div class="table-container">
+              <table>
+                  <thead>
+                      <td>Nombre</td>
+                      <td>Descripcion</td>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>tabla finca 01</td>
+                          <td> 
+                          <p>
+                              este apartado se para registrar, listar, eliminar, actualizar los datos de la tabla finca 
+                          </p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>URL</td>
+                          <td>http://localhost:3000/finca/eliminar/:id_finca</td>
+                      </tr>
+                      <tr>
+                          <td>Descripcion</td>
+                          <td>Esta funcion permite eliminar datos por el id  de la tabla finca de la base de datos</td>
+                      </tr>
+                      <tr>
+                          <td>Verbo HTTP</td>
+                          <td>DELETE</td>
+                      </tr>
+                      <tr>
+                          <td>Header</td>
+                          <td>null</td>
+                      </tr>
+                      <tr>
+                          <td>Usuario</td>
+                          <td>Administrador,encargados</td>
+                      </tr>
+                      <tr>
+                          <td>Peticion Body</td>
+                          <td>null
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>Respuesta Json</td>
+                          <td>Correcto: status:200.json({	"message":"Se eliminó con éxito la finca"}) <br><br>
+                              Incorrecto: status(404).json({"message":"No se eliminó la finca."}) <br><br>
+                              Error: status(500).json({"message":"error "+e.message})
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+              </div>
+
+              <br>
+
+              <div class="table-container">
+              <table>
+                  <thead>
+                      <td>Nombre</td>
+                      <td>Descripcion</td>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>tabla finca 01</td>
+                          <td> 
+                          <p>
+                              este apartado es para registrar listar, eliminar, actualizar los datos de la tabla finca 
+                          </p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>URL</td>
+                          <td>http://localhost:3000/muestra/actualizar/:id_finca</td>
+                      </tr>
+                      <tr>
+                          <td>Descripcion</td>
+                          <td>Esta funcion permite actualizar datos por el id  de la tabla finca de la base de datos</td>
+                      </tr>
+                      <tr>
+                          <td>Verbo HTTP</td>
+                          <td>PUT</td>
+                      </tr>
+                      <tr>
+                          <td>Header</td>
+                          <td>null</td>
+                      </tr>
+                      <tr>
+                          <td>Usuario</td>
+                          <td>Administrador,encargados</td>
+                      </tr>
+                      <tr>
+                          <td>Peticion Body</td>
+                          <td>{ <br>
+                              "nombre_finca": "Villa SanJose",<br>
+                              "fk_id_municipio": 1, <br>
+                              "fk_id_usuario": 1 <br>
+                          } <br>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>Respuesta Json</td>
+                          <td>Correcto: status:200.json({
+                              message":"Se actualizó con éxito la finca"}) <br><br>
+                              Incorrecto: status(404).json({"message": "No se actualizó la finca."}) <br><br>
+                              Error: status(500).json({"message": "error " + e.message })
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+              </div>
+
+
+              <br>
+                <!-- crud formato Daniel -->
+                <h1 class="titulo">Formato</h1>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <td>Nombre</td>
+                            <td>Descripcion</td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>tabla formato 01</td>
+                                <td> 
+                                <p>
+                                    este apartado es para registrar, listar, eliminar y actualizar los datos de la tabla formato
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>URL</td>
+                                <td>http://localhost:3000/formato/registrar</td>
+                            </tr>
+                            <tr>
+                                <td>Descripcion</td>
+                                <td>Esta funcion permite registrar nuevos datos en la tabla formato de la base de datos</td>
+                            </tr>
+                            <tr>
+                                <td>Verbo HTTP</td>
+                                <td>POST</td>
+                            </tr>
+                            <tr>
+                                <td>Header</td>
+                                <td>null</td>
+                            </tr>
+                            <tr>
+                                <td>Usuario</td>
+                                <td>Administrador,encargados</td>
+                            </tr>
+                            <tr>
+                                <td>Peticion Body</td>
+                                <td>
+                                    {<br>
+                                        "version": "segunda", <br>
+                                        "editable": 1, <br>
+                                        "fk_id_tipo_formato": 1, <br>
+                                        "fk_id_usuarios": 1 <br>
+                                    } <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Respuesta Json</td>
+                                <td>Correcto: status:200.json({	 "message": "Se registró con éxito el formato"}) <br><br>
+                                    Incorrecto: status(404).json({"message": "No se registró ningún formato." }) <br><br>
+                                    Error: status(500).json({"message":"error "+e.message})
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                    <br>
+
+                    <div class="table-container">
+                    <table>
+                        <thead>
+                            <td>Nombre</td>
+                            <td>Descripcion</td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>tabla formato 01</td>
+                                <td> 
+                                <p>
+                                    este apartado es para registrar listar, eliminar, actualizar los datos de la tabla formato 
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>URL</td>
+                                <td>http://localhost:3000/formato/listar</td>
+                            </tr>
+                            <tr>
+                                <td>Descripcion</td>
+                                <td>Esta funcion permite listar datos en la tabla formato de la base de datos</td>
+                            </tr>
+                            <tr>
+                                <td>Verbo HTTP</td>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <td>Header</td>
+                                <td>null</td>
+                            </tr>
+                            <tr>
+                                <td>Usuario</td>
+                                <td>Administrador,encargados</td>
+                            </tr>
+                            <tr>
+                                <td>Peticion Body</td>
+                                <td>null
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Respuesta Json</td>
+                                <td>Correcto: status:200.json[<br>
+                                    [ <br>
+                                    { <br>
+                                        "id_formato": 1, <br>
+                                        "version": "primera", <br>
+                                        "editable": 1, <br>
+                                        "fk_id_tipo_formato": 1, <br>
+                                        "fk_id_usuarios": 1 <br>
+                                    }, <br>
+                                    { <br>
+                                        "id_formato": 2, <br>
+                                        "version": "segunda", <br>
+                                        "editable": 1, <br>
+                                        "fk_id_tipo_formato": 1, <br>
+                                        "fk_id_usuarios": 1 <br>
+                                    } <br>
+                                ] <br>
+                                    Incorrecto: status(404).json({"message" : "No se encontraron formatos en la base de datos"}) <br><br>
+                                    Error: status(500).json({"message" : "Error en el controlador FormatoController.js " + err})
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                    <br>
+                    
+                    <div class="table-container">
+                    <table>
+                        <thead>
+                            <td>Nombre</td>
+                            <td>Descripcion</td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>tabla formato 01</td>
+                                <td> 
+                                <p>
+                                    este apartado se para registrar, listar, eliminar, actualizar los datos de la tabla formato 
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>URL</td>
+                                <td>http://localhost:3000/formato/eliminar/:id_formato</td>
+                            </tr>
+                            <tr>
+                                <td>Descripcion</td>
+                                <td>Esta funcion permite eliminar datos por el id  de la tabla formato de la base de datos</td>
+                            </tr>
+                            <tr>
+                                <td>Verbo HTTP</td>
+                                <td>DELETE</td>
+                            </tr>
+                            <tr>
+                                <td>Header</td>
+                                <td>null</td>
+                            </tr>
+                            <tr>
+                                <td>Usuario</td>
+                                <td>Administrador,encargados</td>
+                            </tr>
+                            <tr>
+                                <td>Peticion Body</td>
+                                <td>null
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Respuesta Json</td>
+                                <td>Correcto: status:200.json({	"message":"Se eliminó con éxito el formato."}) <br><br>
+                                    Incorrecto: status(404).json({"message":"No se eliminó el formato."}) <br><br>
+                                    Error: status(500).json({"message":"error "+e.message})
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                    <br>
+
+                    <div class="table-container">
+                    <table>
+                        <thead>
+                            <td>Nombre</td>
+                            <td>Descripcion</td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>tabla formato 01</td>
+                                <td> 
+                                <p>
+                                    este apartado es para registrar listar, eliminar, actualizar los datos de la tabla formato
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>URL</td>
+                                <td>http://localhost:3000/formato/actualizar/:id_formato</td>
+                            </tr>
+                            <tr>
+                                <td>Descripcion</td>
+                                <td>Esta funcion permite actualizar datos por el id  de la tabla formato de la base de datos</td>
+                            </tr>
+                            <tr>
+                                <td>Verbo HTTP</td>
+                                <td>PUT</td>
+                            </tr>
+                            <tr>
+                                <td>Header</td>
+                                <td>null</td>
+                            </tr>
+                            <tr>
+                                <td>Usuario</td>
+                                <td>Administrador,encargados</td>
+                            </tr>
+                            <tr>
+                                <td>Peticion Body</td>
+                                <td>
+                                    { <br>
+                                        "version": "tercera", <br>
+                                        "editable": 1, <br>
+                                        "fk_id_tipo_formato": 1, <br>
+                                        "fk_id_usuarios": 1 <br>
+                                    } <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Respuesta Json</td>
+                                <td>Correcto: status:200.json({
+                                    message":"message":"Se actualizó con éxito el formato."}) <br><br>
+                                    Incorrecto: status(404).json({"message":"No se actualizó el formato."}) <br><br>
+                                    Error: status(500).json({"message":"error "+e.message })
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                <br>
+                <!-- crud municipio Luisa -->
+                <h1 class="titulo">Municipio</h1>
+                <div class="table-container">
+                <table>
+                    <thead>
+                        <td>Nombre</td>
+                        <td>Descripcion</td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>tabla municipio 01</td>
+                            <td> 
+                            <p>
+                                Este apartado es para listar, registrar, actualizar, eliminar y listarID los datos de la tabla municipio
+                            </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>URL</td>
+                            <td>http://localhost:3000/municipio/listar</td>
+                        </tr>
+                        <tr>
+                            <td>Descripcion</td>
+                            <td>Esta funcion permite listar datos en la tabla municipio de la base de datos</td>
+                        </tr>
+                        <tr>
+                            <td>Verbo HTTP</td>
+                            <td>GET</td>
+                        </tr>
+                        <tr>
+                            <td>Header</td>
+                            <td>null</td>
+                        </tr>
+                        <tr>
+                            <td>Usuario</td>
+                            <td>Administrador,encargados</td>
+                        </tr>
+                        <tr>
+                            <td>Peticion Body</td>
+                            <td>Null</td>
+                        </tr>
+                        <tr>
+                            <td>Respuesta Json</td>
+                          <td>Correcto: status:200.json[<br>
+                              {<br>
+                                  "id_municipio": 1, <br>
+                                  "nombre_municipio": "Pitalito", <br>
+                              }, <br>
+                              { <br>
+                                "id_municipio": 2, <br>
+                                "nombre_municipio": "Timaná", <br>
+                            }, <br>
+                          ] <br>
+                              Incorrecto: status(404).json({"menssage":"no se pudo listar correctamente"}) <br><br>
+                              Error: status(500).json({"menssage":"error en la conexion"+error.menssage})
+                          </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <br>
+
+                <div class="table-container">
+                <table>
+                    <thead>
+                        <td>Nombre</td>
+                        <td>Descripcion</td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>tabla municipio 01</td>
+                            <td> 
+                            <p>
+                                Este apartado es para listar, registrar, actualizar, eliminar y listarID los datos de la tabla municipio
+                            </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>URL</td>
+                            <td>http://localhost:3000/municipio/registrar</td>
+                        </tr>
+                        <tr>
+                            <td>Descripcion</td>
+                            <td>Esta funcion permite registrar nuevos datos en la tabla municipio de la base de datos</td>
+                        </tr>
+                        <tr>
+                            <td>Verbo HTTP</td>
+                            <td>POST</td>
+                        </tr>
+                        <tr>
+                            <td>Header</td>
+                            <td>null</td>
+                        </tr>
+                        <tr>
+                            <td>Usuario</td>
+                            <td>Administrador,encargados</td>
+                        </tr>
+                        <tr>
+                            <td>Peticion Body</td>
+                            <td>
+                            {<br>
+                                "nombre_municipio": "Pitalito" <br>
+                            } <br>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Respuesta Json</td>
+                            <td>Correcto: status:200.json({
+                                message":"menssage":"el usuario se registro correctamente"}) <br><br>
+                                Incorrecto: status(404).json({"message":"el usuario no se registro"}) <br><br>
+                                Error: status(500).json({"message":"error al conectar la base de datos"})
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <br>
+
+                <div class="table-container">
+                <table>
+                    <thead>
+                        <td>Nombre</td>
+                        <td>Descripcion</td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>tabla municipio 01</td>
+                            <td> 
+                            <p>
+                                Este apartado es para listar, registrar, actualizar, eliminar y listarID los datos de la tabla municipio
+                            </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>URL</td>
+                            <td>http://localhost:3000/municipio/actualizar/:id</td>
+                        </tr>
+                        <tr>
+                            <td>Descripcion</td>
+                            <td>Esta funcion permite actualizar datos en la tabla municipio de la base de datos</td>
+                        </tr>
+                        <tr>
+                            <td>Verbo HTTP</td>
+                            <td>PUT</td>
+                        </tr>
+                        <tr>
+                            <td>Header</td>
+                            <td>null</td>
+                        </tr>
+                        <tr>
+                            <td>Usuario</td>
+                            <td>Administrador,encargados</td>
+                        </tr>
+                        <tr>
+                            <td>Peticion Body</td>
+                            <td>
+                            {<br>
+                                "id_municipio": 1, <br>
+                                "nombre_municipio": "Pitalito" <br>
+                            } <br>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Respuesta Json</td>
+                            <td>Correcto: status:200.json({
+                                "message":"se actualizo con exito el usuario"}) <br><br>
+                                Incorrecto: status(404).json({"message":"no se actualizo el usuario"})
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <br>
+
+                <div class="table-container">
+                <table>
+                    <thead>
+                        <td>Nombre</td>
+                        <td>Descripcion</td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>tabla municipio 01</td>
+                            <td> 
+                            <p>
+                                Este apartado es para listar, registrar, actualizar, eliminar y listarID los datos de la tabla municipio
+                            </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>URL</td>
+                            <td>http://localhost:3000/municipio/eliminar/:id</td>
+                        </tr>
+                        <tr>
+                            <td>Descripcion</td>
+                            <td>Esta funcion permite eliminar datos en la tabla municipio de la base de datos</td>
+                        </tr>
+                        <tr>
+                            <td>Verbo HTTP</td>
+                            <td>DELETE</td>
+                        </tr>
+                        <tr>
+                            <td>Header</td>
+                            <td>null</td>
+                        </tr>
+                        <tr>
+                            <td>Usuario</td>
+                            <td>Administrador,encargados</td>
+                        </tr>
+                        <tr>
+                            <td>Peticion Body</td>
+                            <td>Null</td>
+                        </tr>
+                        <tr>
+                            <td>Respuesta Json</td>
+                            <td>Correcto: status:200.json({"message":"usuario eliminado correctamente"}) <br><br>
+                                Incorrecto: status(404).json({"message":"usuario no eliminado correctamente"})
+                                Error: status(500).json({"message":"error en la conexion"+error.menssage})
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <br>
+
+                <div class="table-container">
+                <table>
+                    <thead>
+                        <td>Nombre</td>
+                        <td>Descripcion</td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>tabla municipio 01</td>
+                            <td> 
+                            <p>
+                                Este apartado es para listar, registrar, actualizar, eliminar y listarID los datos de la tabla municipio
+                            </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>URL</td>
+                            <td>http://localhost:3000/municipio/listarid/:id</td>
+                        </tr>
+                        <tr>
+                            <td>Descripcion</td>
+                            <td>Esta funcion permite listar datos por el id de la tabla municipio de la base de datos</td>
+                        </tr>
+                        <tr>
+                            <td>Verbo HTTP</td>
+                            <td>GET</td>
+                        </tr>
+                        <tr>
+                            <td>Header</td>
+                            <td>null</td>
+                        </tr>
+                        <tr>
+                            <td>Usuario</td>
+                            <td>Administrador,encargados</td>
+                        </tr>
+                        <tr>
+                            <td>Peticion Body</td>
+                            <td>Null</td>
+                        </tr>
+                        <tr>
+                            <td>Respuesta Json</td>
+                            <td>Correcto: status:200.json[<br>
+                                {<br>
+                                    "id_municipio": 1, <br>
+                                    "nombre_municipio": "Pitalito", <br>
+                                }, <br>
+                                Incorrecto: status(404).json({"message":"usuario no encontrado"})<br><br>
+                                Error: status(500).json({"menssage":"error en la conexion en la base de datos "+error.menssage})
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+    </section> 
+</div>
 </body>
 </html>
