@@ -21,9 +21,9 @@ usuarios = jhontan
  -->
     <h1 class="principal">Documentación de la api</h1>
     <div class="container">
-      <!-- crud muestra Miguel -->
+      <!-- requerimineto iniciar sesion Miguel -->
       <section>
-        <h1 class="titulo">Muestra</h1>
+        <h1 class="titulo">requerimiento iniciar sesion</h1>
         <div class="table-container">
         <table>
             <thead>
@@ -32,20 +32,28 @@ usuarios = jhontan
             </thead>
             <tbody>
                 <tr>
-                    <td>tabla muestra 01</td>
+                    <td>Iniciar Sesion</td>
                     <td> 
                     <p>
-                        este apartado se registrar listar,listarID, elimina , actualiza los datos de la tabla muestra 
+                        	El sistema debe proporcionar un formulario de inicio de sesión en la interfaz de usuario.<br>
+                        	Los usuarios deben poder ingresar su <br>
+                        	°Numero de identificación <br>
+                        	Los usuarios deben ingresar una contraseña válida para iniciar sesión <br>
+                            El sistema debe verificar las credenciales ingresadas y permitir el acceso solo si son válidas. <br>
+                        
+                        	Si las credenciales no son inválidas, el sistema debe mostrar un mensaje de error usuario no autorizado <br>
+                        	Los usuarios deben poder restablecer su contraseña si la olvidan.<br>
+                        Mediante un código que se enviara al correo electrónico 
                     </p>
                     </td>
                 </tr>
                 <tr>
                     <td>URL</td>
-                    <td>http://localhost:3000/muestra/registrar</td>
+                    <td>http://localhost:3000/login</td>
                 </tr>
                 <tr>
                     <td>Descripcion</td>
-                    <td>Esta funcion permite registrar nuevos datos  en la tabla muestra de la base de datos</td>
+                    <td>Esta funcion permite la validar las credenciales del usuario en la base de datos </td>
                 </tr>
                 <tr>
                     <td>Verbo HTTP</td>
@@ -57,21 +65,24 @@ usuarios = jhontan
                 </tr>
                 <tr>
                     <td>Usuario</td>
-                    <td>Administrador,encargados</td>
+                    <td>Administrador,encargados,invitado</td>
                 </tr>
                 <tr>
                     <td>Peticion Body</td>
                     <td>json: {
-                        "cantidad":30.66,
-                        "fk_id_finca":1
+                        "numero_identificacion":"1006459235",
+                        "contraseña_usuario":"miguel123"
                     }
                     </td>
                 </tr>
                 <tr>
                     <td>Respuesta Json</td>
-                    <td>Correcto: status:200.json({	"menssage": "se registro correctamente"}) <br><br>
-                        Incorrecto: status(404).json({"message":"no se registro correctamente"}) <br><br>
-                        Error: status(500).json({"message":"error al conectar con la base de datos"+error.message})
+                    <td>Correcto: status:200.json({
+                        "nombre_usuario": "Miguel",
+                        "rol_usuario": "administrador"
+                    }) <br><br>
+                        Incorrecto: status(404).json({ "menssage": "Usuario no autorizado" }) <br><br>
+                        Error: status(500).json("Error en el servidor"+error.message)
                     </td>
                 </tr>
             </tbody>
@@ -80,233 +91,11 @@ usuarios = jhontan
 
         <br>
 
-        <div class="table-container">
-        <table>
-            <thead>
-                <td>Nombre</td>
-                <td>Descripcion</td>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>tabla muestra 01</td>
-                    <td> 
-                    <p>
-                        este apartado se registrar listar,listarID, elimina , actualiza los datos de la tabla muestra 
-                    </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>URL</td>
-                    <td>http://localhost:3000/muestra/listar</td>
-                </tr>
-                <tr>
-                    <td>Descripcion</td>
-                    <td>Esta funcion permite listar  datos  en la tabla muestra de la base de datos</td>
-                </tr>
-                <tr>
-                    <td>Verbo HTTP</td>
-                    <td>GET</td>
-                </tr>
-                <tr>
-                    <td>Header</td>
-                    <td>null</td>
-                </tr>
-                <tr>
-                    <td>Usuario</td>
-                    <td>Administrador,encargados</td>
-                </tr>
-                <tr>
-                    <td>Peticion Body</td>
-                    <td>null
-                    </td>
-                </tr>
-                <tr>
-                    <td>Respuesta Json</td>
-                    <td>Correcto: status:200.json({	"menssage": "	{
-                        "id_muestra": 12,
-                        "cantidad": 30.66,
-                        "fk_id_finca": 1
-                    },"}) <br><br>
-                        Incorrecto: status(404).json({"menssage":"no se pudo listar correctamente"}) <br><br>
-                        Error: status(500).json({"menssage":"error en la conexion"+error.menssage})
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-        <br>
-
-        <div class="table-container">
-        <table>
-            <thead>
-                <td>Nombre</td>
-                <td>Descripcion</td>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>tabla muestra 01</td>
-                    <td> 
-                    <p>
-                        este apartado se registrar listar,listarID, elimina , actualiza los datos de la tabla muestra 
-                    </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>URL</td>
-                    <td>http://localhost:3000/muestra/listarid/:id</td>
-                </tr>
-                <tr>
-                    <td>Descripcion</td>
-                    <td>Esta funcion permite listar  datos por el id  de la tabla muestra de la base de datos</td>
-                </tr>
-                <tr>
-                    <td>Verbo HTTP</td>
-                    <td>GET</td>
-                </tr>
-                <tr>
-                    <td>Header</td>
-                    <td>null</td>
-                </tr>
-                <tr>
-                    <td>Usuario</td>
-                    <td>Administrador,encargados</td>
-                </tr>
-                <tr>
-                    <td>Peticion Body</td>
-                    <td>null
-                    </td>
-                </tr>
-                <tr>
-                    <td>Respuesta Json</td>
-                    <td>Correcto: status:200.json({	"menssage": "{
-                        "id_muestra": 12,
-                        "cantidad": 30.66,
-                        "fk_id_finca": 1
-                    },"}) <br><br>
-                        Incorrecto: status(404).json({"message":"dato no encontrado"}) <br><br>
-                        Error: status(500).json({"menssage":"error en la conexion"+error.menssage})
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-        <br>
-
-        <div class="table-container">
-        <table>
-            <thead>
-                <td>Nombre</td>
-                <td>Descripcion</td>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>tabla muestra 01</td>
-                    <td> 
-                    <p>
-                        este apartado se registrar listar,listarID, eliminar , actualiza los datos de la tabla muestra 
-                    </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>URL</td>
-                    <td>http://localhost:3000/muestra/listarid/:id</td>
-                </tr>
-                <tr>
-                    <td>Descripcion</td>
-                    <td>Esta funcion permite eliminar  datos por el id  de la tabla muestra de la base de datos</td>
-                </tr>
-                <tr>
-                    <td>Verbo HTTP</td>
-                    <td>DELETE</td>
-                </tr>
-                <tr>
-                    <td>Header</td>
-                    <td>null</td>
-                </tr>
-                <tr>
-                    <td>Usuario</td>
-                    <td>Administrador,encargados</td>
-                </tr>
-                <tr>
-                    <td>Peticion Body</td>
-                    <td>null
-                    </td>
-                </tr>
-                <tr>
-                    <td>Respuesta Json</td>
-                    <td>Correcto: status:200.json({	"message":"dato eliminado correctamente"}) <br><br>
-                        Incorrecto: status(404).json({"message":"dato  no se elimino correctamente"}) <br><br>
-                        Error: status(500).json({"message":"error en la conexion"+error.menssage})
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-        <br>
-
-        <div class="table-container">
-        <table>
-            <thead>
-                <td>Nombre</td>
-                <td>Descripcion</td>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>tabla muestra 01</td>
-                    <td> 
-                    <p>
-                        este apartado se registrar listar,listarID, eliminar , actualiza los datos de la tabla muestra 
-                    </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>URL</td>
-                    <td>http://localhost:3000/muestra/actualizar/:id</td>
-                </tr>
-                <tr>
-                    <td>Descripcion</td>
-                    <td>Esta funcion permite actualizar  datos por el id  de la tabla muestra de la base de datos</td>
-                </tr>
-                <tr>
-                    <td>Verbo HTTP</td>
-                    <td>PUT</td>
-                </tr>
-                <tr>
-                    <td>Header</td>
-                    <td>null</td>
-                </tr>
-                <tr>
-                    <td>Usuario</td>
-                    <td>Administrador,encargados</td>
-                </tr>
-                <tr>
-                    <td>Peticion Body</td>
-                    <td>json:{
-                        "id_muestra":12,
-                            "cantidad":50.3,
-                            "fk_id_finca":1
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>Respuesta Json</td>
-                    <td>Correcto: status:200.json({
-                        message":"se actualizo con exito "}) <br><br>
-                        Incorrecto: status(404).json({"message":"no se actualizo correctamente}) <br><br>
-                        Error: status(500).json({"message":"error en la conexion"+error.menssage})
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
+ 
 
   <br>
-    <!-- crud archivo Daniel -->
-    <h1 class="titulo">Archivos</h1>
+    <!-- r archivo Daniel -->
+    <h1 class="titulo">requerimiento cargar y eliminar  documento</h1>
     <div class="table-container">
         <table>
             <thead>
@@ -315,10 +104,27 @@ usuarios = jhontan
             </thead>
             <tbody>
                 <tr>
-                    <td>tabla archivos 01</td>
+                    <td>carga de documentos</td>
                     <td> 
                     <p>
-                        este apartado es para registrar, listar, eliminar y actualizar los datos de la tabla archivos
+                        	La función de carga de documentos estará ubicada en la parte superior derecha del módulo gestión documental del sistema.<br>
+                             Al seleccionarla, se desplegará una ventana emergente con dos opciones: cargar un nuevo documento o actualizar uno existente.<br>
+                        	Para cargar un nuevo documento, se deberá completar un formulario con los siguientes campos:<br>
+                        •	Nombre del documento<br>
+                        •	Versión del documento<br>
+                        •	Fecha de carga<br>
+                        •	Estado <br>
+                        •	Formato (PDF, Excel, Word)<br>
+                        •	Nombre y rol del usuario que realiza la acción<br>
+                        •	nombre del usuario en caso de ser el encargado<br>
+                        	Al seleccionar la opción de actualizar un documento, se mostrará un formulario donde se deberá ingresar el nombre y la versión del documento a actualizar.<br>
+                             Posteriormente, se habilitará un botón de subir que permitirá reemplazar el documento.<br>
+                    	    Una vez el documento este actualizado, el documento anterior cambiara de estado y pasara a inactivo <br>
+                        	El botón de eliminación estará situado en la parte derecha de cada documento y estará disponible únicamente para el rol de administración.<br>
+                        	 En caso de que la solicitud de carga sea realizada por el rol de encargado, será enviada a revisión al rol de administrador y será validado por los roles que encuentren en el momento,<br>
+                              se requiere la aprobación de todos los administradores y solo se cargarán los documentos si cuentan con las aprobaciones.<br>
+                        	El rol de invitado no tendría acceso a ninguna de estas acciones 
+                        
                     </p>
                     </td>
                 </tr>
@@ -345,14 +151,15 @@ usuarios = jhontan
                 <tr>
                     <td>Peticion Body</td>
                     <td>
-                        { <br>
-                            "nombre": "trilla documento", <br>
-                            "fecha_carga": "2024-03-17T05", <br>
-                            "estado": 1, <br>
-                            "fk_id_usuarios": 1, <br>
-                            "fk_id_formatos": 1, <br>
-                            "descripcion": "documento informativo de trilla" <br>
-                        } <br>
+                        {<br>
+                            "nombre":"procesos misionales",<br>
+                            "fecha_carga":"2024-04-03",<br>
+                            "estado":1,<br>
+                            "fk_id_usuarios":1,<br>
+                            "fk_id_formatos":1,<br>
+                            "descripcion":"documento de procesos misionales",<br>
+                            "formato":"pdf"<br>
+                        }<br>
                     </td>
                 </tr>
                 <tr>
@@ -368,7 +175,7 @@ usuarios = jhontan
 
         <br>
 
-        <div class="table-container">
+      <!--   <div class="table-container">
         <table>
             <thead>
                 <td>Nombre</td>
@@ -376,10 +183,10 @@ usuarios = jhontan
             </thead>
             <tbody>
                 <tr>
-                    <td>tabla archivos 01</td>
+                    <td>eliminacion de documento</td>
                     <td> 
                     <p>
-                        este apartado es para registrar listar, eliminar, actualizar los datos de la tabla archivos 
+                        este apartado es para  eliminar, los datos de la tabla archivos 
                     </p>
                     </td>
                 </tr>
@@ -401,7 +208,7 @@ usuarios = jhontan
                 </tr>
                 <tr>
                     <td>Usuario</td>
-                    <td>Administrador,encargados</td>
+                    <td>Administrador</td>
                 </tr>
                 <tr>
                     <td>Peticion Body</td>
@@ -427,7 +234,7 @@ usuarios = jhontan
                 </tr>
             </tbody>
         </table>
-        </div>
+        </div> -->
 
         <br>
         
@@ -439,10 +246,10 @@ usuarios = jhontan
             </thead>
             <tbody>
                 <tr>
-                    <td>tabla archivos 01</td>
+                    <td>eliminar documento</td>
                     <td> 
                     <p>
-                        este apartado se para registrar, listar, eliminar, actualizar los datos de la tabla archivos 
+                        este apartado se para  eliminar,  los datos de la tabla archivos 
                     </p>
                     </td>
                 </tr>
@@ -484,7 +291,7 @@ usuarios = jhontan
 
         <br>
 
-        <div class="table-container">
+    <!--     <div class="table-container">
         <table>
             <thead>
                 <td>Nombre</td>
@@ -543,7 +350,7 @@ usuarios = jhontan
                 </tr>
             </tbody>
         </table>
-        </div>
+        </div> -->
 
        
         <br>
