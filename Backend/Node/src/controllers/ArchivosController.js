@@ -15,10 +15,10 @@ export const listarArchivos = async (req, res) => {
 
 export const registrarArchivos = async (req, res) => {
     try {
-        let {nombre, fecha_carga, estado, fk_id_usuarios, fk_id_formatos, descripcion} = req.body
+        let {nombre, fecha_carga, estado, fk_id_usuarios, fk_id_formatos, descripcion,formato} = req.body
 
-        let sql = `insert into archivos (nombre, fecha_carga, estado, fk_id_usuarios, fk_id_formatos, descripcion)
-        values ('${nombre}','${fecha_carga}','${estado}','${fk_id_usuarios}','${fk_id_formatos}','${descripcion}')`
+        let sql = `insert into archivos (nombre, fecha_carga, estado, fk_id_usuarios, fk_id_formatos, descripcion,formato)
+        values ('${nombre}','${fecha_carga}','${estado}','${fk_id_usuarios}','${fk_id_formatos}','${descripcion}','${formato}')`
         const [rows] = await conexion.query(sql)
         if(rows.affectedRows > 0){
             return res.status(200).json({"message":"Se registró con éxito el archivo"})
