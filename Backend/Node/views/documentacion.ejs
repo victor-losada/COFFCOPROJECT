@@ -354,8 +354,8 @@ usuarios = jhontan
 
        
         <br>
-          <!-- crud finca Daniel -->
-          <h1 class="titulo">Finca</h1>
+      
+          <h1 class="titulo">Generar Estadistica</h1>
           <div class="table-container">
               <table>
                   <thead>
@@ -364,24 +364,28 @@ usuarios = jhontan
                   </thead>
                   <tbody>
                       <tr>
-                          <td>tabla finca 01</td>
+                          <td>generar Estadistica</td>
                           <td> 
                           <p>
-                              este apartado es para registrar, listar, eliminar y actualizar los datos de la tabla finca
+                              este apartado es para traer valores de la base de datos con el fin de generar graficos 
                           </p>
                           </td>
                       </tr>
                       <tr>
                           <td>URL</td>
-                          <td>http://localhost:3000/finca/registrar</td>
+                          <td>http://localhost:3000/estadistica/td>
                       </tr>
                       <tr>
                           <td>Descripcion</td>
-                          <td>Esta funcion permite registrar nuevos datos en la tabla finca de la base de datos</td>
+                          <td>Este apartado estará en los diferentes módulos del sistema como los servicios permitirá ver una estadística en tiempo real donde se muestre:<br>
+                            •	Mes donde mas se alquilo el laboratorio <br>
+                            •	fincas  que mas se les hace proceso y cuales son esos procesos <br>
+                                       Esta estadística estaría reflejada en un diagrama de barras en cada uno de los diferentes módulos 
+                            </td>
                       </tr>
                       <tr>
                           <td>Verbo HTTP</td>
-                          <td>POST</td>
+                          <td>get</td>
                       </tr>
                       <tr>
                           <td>Header</td>
@@ -393,18 +397,37 @@ usuarios = jhontan
                       </tr>
                       <tr>
                           <td>Peticion Body</td>
-                          <td>json: { <br>
-                              "nombre_finca": "Nombre de la finca", <br>
-                              "fk_id_municipio": 1, <br>
-                              "fk_id_usuario": 1 <br>
-                            } <br>
+                          <td>null
                           </td>
                       </tr>
                       <tr>
                           <td>Respuesta Json</td>
-                          <td>Correcto: status:200.json({	"message": "Se registró con éxito la finca"}) <br><br>
-                              Incorrecto: status(404).json({"message":"No se registró la finca."}) <br><br>
-                              Error: status(500).json({"message":"error "+e.message})
+                          <td>Correcto:   res.status(200).json( {
+                            "cantidad": 33.33,<br>
+                            "fecha_muestra": "2024-04-08T05:00:00.000Z",<br>
+                            "nombre_finca": "el dorado",<br>
+                            "tipo_servicios": "tostion"<br>
+                          },<br>
+                          {<br>
+                            "cantidad": 44.55,<br>
+                            "fecha_muestra": "2024-04-10T05:00:00.000Z",<br>
+                            "nombre_finca": "el tigre",<br>
+                            "tipo_servicios": "trilla"<br>
+                          },<br>
+                          {<br>
+                            "cantidad": 20.366,<br>
+                            "fecha_muestra": "2024-04-05T05:00:00.000Z",<br>
+                            "nombre_finca": "consejo",<br>
+                            "tipo_servicios": "analisis fisico"<br>
+                          },<br>
+                          {<br>
+                            "cantidad": 20.366,<br>
+                            "fecha_muestra": "2024-04-05T05:00:00.000Z",<br>
+                            "nombre_finca": "consejo",<br>
+                            "tipo_servicios": "analisis sensorial"<br>
+                          }); <br><br>
+                              Incorrecto:  res.status(404).json({ message: "No se encontraron datos" }); <br><br>
+                              Error:  res.status(500).json({ message: "Error en la conexion"+error.message });
                           </td>
                       </tr>
                   </tbody>
