@@ -314,19 +314,209 @@ usuarios = jhontan
                       </tr>
                   </tbody>
               </table>
-              </div>
-
               <br>
-
-          
-              
-
-            
-
+<!-- CRUD DE VICTOR 2-->
+              <h1 class="titulo">Almacenar Documentos Según Versiones</h1>
+              <table>
+                <thead>
+                   <td>Nombre</td>
+                   <td>Descripcion</td>
+               </thead>
+               <tbody>
+                   <tr>
+                       <td> Almacenar Documentos Según Versiones</td>
+                       <td> 
+                       <p>
+                           Los modulos porporcionan un sistema en donde se encuentren formatos bien especificados a llenar como:  Nonmbre dl documento, usuario, fecha, resultado y potros datos llenos por defecto. Además de esto trae información y ciertas funciones aplicadas solo para un rol (administrador ) como; numero de documentos, versión reciente o antigua y actualizar documentos entre otras.  Todos los roles tienen acceso a los modulos excepto en un modulo, un rol no tendrá acceso; que es rol de invitado.                </p>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>URL-POST</td>
+                       <td>http://localhost:3000/documentos</td>
+                   </tr>
+                   <tr>
+                       <td>URL-PATCH</td>
+                       <td>http://localhost:3000/documentos/:id_documentos</td>
+                   </tr>
+                   <tr>
+                       <td>Descripcion</td>
+                       <td>Esta función permite gestionar documentos de manera estructurada y versionada dentro de un sistema.</td>
+                   </tr>
+                   <tr>
+                       <td>Verbo HTTP</td>
+                       <td>POST/PATCH</td>
+                   </tr>
                
-
+                   <tr>
+                       <td>Header</td>
+                       <td>null</td>
+                   </tr>
+                   <tr>
+                       <td>Usuario</td>
+                       <td>Administrador,encargados e invitados</td>
+                   </tr>
+                   <tr>
+                       <td>Peticion Body POST</td>
+                       <td>{
+                           "nombre_documento": "Trilla_nueva",
+                           "usuario": "victor2211",
+                           "fecha": "2024-04-13",
+                           "resultado": "Exitoso",
+                       }
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>Peticion Body PATCH</td>
+                       <td>{
+                           "resultado": "Exitoso, modificado"
+                           "fecha": "2024-04-15",
+                       }
+                       
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>Respuesta Json</td>
+                       <td>{
+                           "status": "200",
+                           "message": "La operación se ha completado correctamente.",
+                           "documento": {
+                           "id": "123456789",
+                           "nombre_documento": "Documento2",
+                           "usuario": "victor2211",
+                           "fecha": "2024-04-15",
+                           "resultado": "Exitoso",
+                           }
+                       }
+                       <br><br>
+                           Incorrecto: status(404).json({"{
+                               "message": "Hubo un problema al procesar la solicitud. Por favor, inténtalo de nuevo."
+                           }
+                           "}) <br><br>
+                           Error: status(500).json({"message":"error "+e.message})
+                       </td>
+                   </tr>
+               </tbody>
+            </table>
+   
+           <br>
+           <h1 class="titulo">Descarga de documentos</h1>
+           <table>
+               <thead>
+                   <td>Nombre</td>
+                   <td>Descripcion</td>
+               </thead>
+               <tbody>
+                   <tr>
+                       <td>Descarga de documentos</td>
+                       <td> 
+                       <p>
+                           La función de descarga estara disponible para todos los roles del sistema y se mostrara en todos los módulos al lado de cada documento. Esto significa que todos los usuarios tendrán la capacidad de descargar documentos según les  sea necesario.
+                           el sistema no podra convertir un documento de un formato a otro en ningún moment, por lo tanto los documentos estarán disponibles para su descarga en el formato original en el que fueron cargados.
+   
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>URL</td>
+                       <td> http://localhost:3000/descarga/{id del documento}</td>
+                   </tr>
+                   <tr>
+                       <td>Descripcion</td>
+                       <td>Facilita a los usuarios la descarga directa de documentos almacenados en el sistema, manteniendo su formato original.</td>
+                   </tr>
+                   <tr>
+                       <td>Verbo HTTP</td>
+                       <td>GET</td>
+                   </tr>
                
-
+                   <tr>
+                       <td>Header</td>
+                       <td>null</td>
+                   </tr>
+                   <tr>
+                       <td>Usuario</td>
+                       <td>Administrador,encargados e invitados</td>
+                   </tr>
+                   <tr>
+                       <td>Peticion Body POST</td>
+                       <td>NUll
+                       </td>
+                   </tr>
+   
+                   <tr>
+                       <td>Respuesta Json</td>
+                       <td>{
+                           "Correcto": { "status": 200, "message": "La descarga del documento se ha completado correctamente." }
+                       }
+                       
+                       <br><br>
+                           Incorrecto: status(404).json({"{"message": "No se ha podido completar la descarga del documento. Por favor, inténtalo de nuevo" }
+                           "}) <br><br>
+                           Error: status(500).json({"message":"error "+e.message})
+                       </td>
+                   </tr>
+               </tbody>
+            </table>
+   
+         
+            <h1 class="titulo">Desplegar Menu De Opciones</h1>
+           <table>
+               <thead>
+                   <td>Nombre</td>
+                   <td>Descripcion</td>
+               </thead>
+               <tbody>
+                   <tr>
+                       <td>Desplegar Menu De Opciones</td>
+                       <td> 
+                       <p>
+                          El sistema debe proporcionar en la parte superior izquierda de la interfaz del sistema un menú tipo hamburguesa que contendrá diversas opciones:
+   
+                           Alertas: Una casilla visible para todos los roles, mostrando actualizaciones recientes y solicitudes de aprobación pendientes.
+                           Solicitud de Aprobación: Disponible solo para el rol de administrador para validar y aprobar solicitudes. La aprobación se carga al sistema si es aprobada por todos los administradores.
+                           Administrar Usuarios: Exclusiva para los administradores, permitiendo la creación de cuentas, asignación de roles, definición de permisos, actualización de información y restablecimiento de contraseñas.
+                           Ayuda: Disponible para todos los roles, proporcionando información según la búsqueda y el rol del usuario.
+                           Inicio: Redirecciona a la vista principal para todos los roles.
+                           Alquiler de Laboratorio: Redirige al módulo de alquiler de laboratorio, donde se muestra la disponibilidad y se puede agendar el laboratorio para su aprobación por un administrador.
+                           Generar Estadísticas: Redirige al módulo de estadísticas, ofreciendo opciones para visualizar estadísticas.
+                           Cerrar Sesión: Disponible para todos los roles, permitiendo salir del sistema.                    </p>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>URL</td>
+                       <td>null</td>
+                   </tr>
+                   <tr>
+                       <td>Descripcion</td>
+                       <td>El menú desplegable ofrece acceso rápido a opciones como alertas, gestión de usuarios, estadísticas y más, adaptadas a los roles de cada usuario</td>
+                   </tr>
+                   <tr>
+                       <td>Verbo HTTP</td>
+                       <td>GET</td>
+                   </tr>
+                   <tr>
+                       <td>Header</td>
+                       <td>null</td>
+                   </tr>
+                   <tr>
+                       <td>Usuario</td>
+                       <td>Administrador,encargados, e invitados</td>
+                   </tr>
+                   <tr>
+                       <td>Peticion Body</td>
+                       <td>null
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>Respuesta Json</td>
+                       <td>Correcto: {"status": 200, "message": "El menú se ha desplegado correctamente."}<br><br>
+                           "Incorrecto": {"status": 400, "message": "No se ha podido desplegar el menú. Por favor, inténtalo de nuevo."}<br><br>
+                            Error: status(500).json({"message":"error "+e.message})
+                       </td>
+                   </tr>
+               </tbody>
+           </table>
+              </div>
+              <br>
               
     </section> 
 </div>

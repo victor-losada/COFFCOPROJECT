@@ -8,9 +8,12 @@ import rutaUsuario from './src/routes/usuarioRoute.js';
 import rutaDetalle from "./src/routes/detalleRoute.js";
 import rutaFinca from "./src/routes/FincaRoute.js";
 import rutaDatos from "./src/routes/DatosRouters.js";
-import cors from "cors"; 
 import RutaAuth from "./src/routes/AutonteficacionRoutes.js";
 import EstadisticaRouter from "./src/routes/EstadisticaRouters.js";
+import routerDocumento from "./src/routes/documentosRoute.js";
+import routerDescarga from "./src/routes/descargaDocRoute.js";
+
+import cors from "cors"; 
 
 const servidor = express();
 
@@ -34,8 +37,13 @@ servidor.use('/usuario', rutaUsuario);
 servidor.use('/detalle', rutaDetalle);
 servidor.use('/finca', rutaFinca);
 servidor.use('/datos', rutaDatos);
-servidor.use(EstadisticaRouter)
-servidor.use(RutaAuth)
+servidor.use('/autenticacion',RutaAuth);
+servidor.use('/estadistica',EstadisticaRouter);
+servidor.use('/documentos',routerDocumento);
+servidor.use('/descarga',routerDescarga);
+
+
+
 servidor.listen(3000, () => {
     console.log("servidor escuchando desde el puerto 3000");
 });
