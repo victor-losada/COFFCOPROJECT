@@ -6,6 +6,6 @@ rutaArchivo.get('/listar', listarArchivos)
 rutaArchivo.post('/registrar', registrarArchivos)
 rutaArchivo.delete('/eliminar/:id_documentos', eliminarArchivos)
 rutaArchivo.put('/actualizar/:id_documentos', actualizarArchivos)
-rutaArchivo.get('/listarid/:id_documentos', ListaridArchivos)
+rutaArchivo.get('/listarid/:id', ListaridArchivos)
 
 export default rutaArchivo
