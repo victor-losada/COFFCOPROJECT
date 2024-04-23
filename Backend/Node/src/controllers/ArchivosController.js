@@ -70,3 +70,21 @@ export const actualizarArchivos = async (req, res) => {
         return res.status(500).json({"message":"error "+e.message})
     }
 }
+
+
+export const ListaridArchivos=async(req,res)=>{
+    try {
+        let id=req.params.id
+        let sql=`select * from archivos where id_documentos=${id}`
+        const [responde]= await conexion.query(sql)
+        if(responde.length == 1){
+            res.status(200).json(responde)
+        }
+        else{
+            res.status(500).json({"message":"dato no encontrado"})
+        }
+        
+    } catch (error) {
+        res.status(500).json({"menssage":"error en la conexion"+error.menssage})
+    }
+    }
