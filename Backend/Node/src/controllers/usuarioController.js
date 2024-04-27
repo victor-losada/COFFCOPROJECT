@@ -64,10 +64,10 @@ export const eliminarUsuario = async (req,res)=>{
 export const actualizarUsuario = async (req,res)=>{
     try {
         let id=req.params.id
-        let {nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario,numero_identificacion}=req.body
+        let {nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario,numero_identificacion,tipo_documento}=req.body
         let sql=`update usuarios set nombre_usuario='${nombre_usuario}', apellido_usuario='${apellido_usuario}',
          correo_electronico='${correo_electronico}', telefono_usuario='${telefono_usuario}',rol_usuario='${rol_usuario}', 
-         contraseña_usuario='${contraseña_usuario}',${numero_identificacion} where id_usuario='${id}'`
+         contraseña_usuario='${contraseña_usuario}',numero_identificacion=${numero_identificacion},tipo_documento='${tipo_documento}' where id_usuario='${id}'`
         const [respuesta]= await conexion.query(sql)
 
         if(respuesta.affectedRows>0){
