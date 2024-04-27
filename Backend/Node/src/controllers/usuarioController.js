@@ -32,9 +32,9 @@ export const listarUsuarioId = async (req,res) => {
 
 export const registrarUsuario = async (req,res)=>{
     try {
-        let{nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario,numero_identificacion}=req.body
-        let sql = `insert into usuarios (nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario,numero_identificacion)
-        value('${nombre_usuario}','${apellido_usuario}','${correo_electronico}','${telefono_usuario}','${rol_usuario}','${contraseña_usuario}','${numero_identificacion}')`;
+        let{nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario,numero_identificacion,tipo_documento}=req.body
+        let sql = `insert into usuarios (nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario,numero_identificacion,tipo_documento)
+        value('${nombre_usuario}','${apellido_usuario}','${correo_electronico}','${telefono_usuario}','${rol_usuario}','${contraseña_usuario}','${numero_identificacion}','${tipo_documento}')`;
         const [respuesta]=await conexion.query(sql)
         if(respuesta.affectedRows>0){
             res.status(200).json({'message':'Se registro el usuario con exito'})
