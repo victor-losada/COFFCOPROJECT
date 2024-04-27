@@ -1,7 +1,7 @@
 import { conexion } from "../database/conexion.js"
 import { validationResult } from "express-validator"
 
-export const listarArchivos = async (req, res) => {
+export const listarDocumentos = async (req, res) => {
     try{
         let sql = 'select * from documentos'
         const [result] = await conexion.query(sql)
@@ -14,7 +14,7 @@ export const listarArchivos = async (req, res) => {
     }
 }
 
-export const registrarArchivos = async (req, res) => {
+export const registrarDocumentos = async (req, res) => {
     try {
         const error= validationResult(req)
         if(!error.isEmpty()){
@@ -37,7 +37,7 @@ export const registrarArchivos = async (req, res) => {
     }
 }
 
-export const eliminarArchivos = async (req, res) => {
+export const eliminarDocumentos = async (req, res) => {
     try {
         let id_documentos = req.params.id_documentos
 
@@ -56,12 +56,12 @@ export const eliminarArchivos = async (req, res) => {
     }
 }
 
-export const actualizarArchivos = async (req, res) => {
+export const actalizardocumentos = async (req, res) => {
     try {
-        let {nombre, fecha_carga, estado, fk_id_usuarios, fk_id_formatos, descripcion} = req.body
+        let {nombre, fecha_carga,  fk_id_usuarios,  descripcion,formato,estado} = req.body
         let id_documentos = req.params.id_documentos
-        let sql = `update documentos set nombre = '${nombre}', fecha_carga = '${fecha_carga}', estado = '${estado}', 
-        fk_id_usuarios = '${fk_id_usuarios}', fk_id_formatos = '${fk_id_formatos}', descripcion = '${descripcion}' where id_documentos = ${id_documentos}`
+        let sql = `update documentos set nombre = '${nombre}', fecha_carga = '${fecha_carga}', 
+        fk_id_usuarios = '${fk_id_usuarios}', fk_id_formatos = '${fk_id_formatos}', descripcion = '${descripcion}', formato = '${formato}',estado = '${estado}' where id_documentos = ${id_documentos}`
 
         const [rows] = await conexion.query(sql)
         if(rows.affectedRows > 0){
