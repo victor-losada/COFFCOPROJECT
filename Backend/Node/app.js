@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import rutaMunicipio from "./src/routes/municipioRoute.js";
 import ruta from "./src/routes/muestraRoutes.js";
-import ArchivosRoute from "./src/routes/ArchivosRoute.js";
+import DocumentosRoute from "./src/routes/DocumentosRoute.js";
 import FormatoRoute from './src/routes/FormatoRoute.js';
 import rutaUsuario from './src/routes/usuarioRoute.js';
 import rutaDetalle from "./src/routes/detalleRoute.js";
@@ -28,8 +28,8 @@ servidor.use('/documents', (req, res) => {
 
 servidor.use("/municipio", rutaMunicipio);
 servidor.use("/muestra", ruta);
-servidor.use("/archivo", ArchivosRoute);
-servidor.use("/formato", FormatoRoute);
+servidor.use("/documentos",DocumentosRoute );
+servidor.use("/versiones", FormatoRoute);
 servidor.use('/usuario', rutaUsuario);
 servidor.use('/detalle', rutaDetalle);
 servidor.use('/finca', rutaFinca);
