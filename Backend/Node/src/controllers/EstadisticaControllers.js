@@ -1,8 +1,12 @@
 import { conexion } from "../database/conexion.js";
-
+import { validationResult } from "express-validator"
 export const Estadistica = async (req, res) => {
     try {
-
+    
+        const error= validationResult(req)
+        if(!error.isEmpty()){
+            return res.status(400).json(error)
+        }
         let sql = ` SELECT muestra.cantidad, muestra.fecha_muestra, finca.nombre_finca, servicios.tipo_servicios FROM muestra JOIN
          finca ON muestra.fk_id_finca = finca.id_finca JOIN servicios ON muestra.id_muestra = servicios.fk_id_muestra;`
         const [resultado] = await conexion.query(sql);

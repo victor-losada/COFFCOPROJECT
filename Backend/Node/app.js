@@ -12,6 +12,8 @@ import cors from "cors";
 import RutaAuth from "./src/routes/AutonteficacionRoutes.js";
 import EstadisticaRouter from "./src/routes/EstadisticaRouters.js";
 
+
+
 const servidor = express();
 
 servidor.use(bodyParser.json());
@@ -19,9 +21,7 @@ servidor.use(bodyParser.urlencoded({ extended: true }));
 servidor.set('view engine', 'ejs');
 servidor.set('views', './views');
 servidor.use(express.static('./public')); 
-
 servidor.use(cors());
-
 servidor.use('/documents', (req, res) => {
     res.render('documentacion.ejs');
 });

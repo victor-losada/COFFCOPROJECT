@@ -1,4 +1,5 @@
 import { conexion } from "../database/conexion.js"
+import { validationResult } from "express-validator"
 import jwt from"jsonwebtoken"
 export const validarToken=async(req,res,next)=>{
 let token_user=req.headers['token']
@@ -17,7 +18,12 @@ else{
 }
 }
 export const validarUsuarios = async (req, res) => {
+
   try {
+    const error= validationResult(req)
+    if(!error.isEmpty()){
+        return res.status(400).json(error)
+    }
     let { numero_identificacion, contraseña_usuario } = req.body
 
     let sql = `select nombre_usuario,rol_usuario from usuarios where numero_identificacion = '${numero_identificacion}' and contraseña_usuario = '${contraseña_usuario}'`
