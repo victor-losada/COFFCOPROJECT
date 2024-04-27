@@ -1,4 +1,5 @@
 import { conexion } from "../database/conexion.js"
+import { validationResult } from "express-validator"
 
 export const listarArchivos = async (req, res) => {
     try{
@@ -15,10 +16,14 @@ export const listarArchivos = async (req, res) => {
 
 export const registrarArchivos = async (req, res) => {
     try {
-        let {nombre, fecha_carga, estado, fk_id_usuarios, fk_id_formatos, descripcion,formato} = req.body
+        const error= validationResult(req)
+        if(!error.isEmpty()){
+            return res.status(400).json(error)
+        }
+        let {nombre, fecha_carga,  fk_id_usuarios, descripcion,formato} = req.body
 
-        let sql = `insert into documentos (nombre, fecha_carga, estado, fk_id_usuarios, fk_id_formatos, descripcion,formato)
-        values ('${nombre}','${fecha_carga}','${estado}','${fk_id_usuarios}','${fk_id_formatos}','${descripcion}','${formato}')`
+        let sql = `insert into documentos (nombre, fecha_carga, fk_id_usuarios, descripcion,formato )
+        values ('${nombre}','${fecha_carga}','${fk_id_usuarios}','${descripcion}','${formato}')`
         const [rows] = await conexion.query(sql)
         if(rows.affectedRows > 0){
             return res.status(200).json({"message":"Se registró con éxito el documentos"})
