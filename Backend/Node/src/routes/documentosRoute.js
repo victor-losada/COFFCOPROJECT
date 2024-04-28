@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { listarDocumentos, registrarDocumentos, eliminarDocumentos, actalizardocumentos,buscarDocumentos } from "../controllers/DocumentosController.js"
 import { validarToken } from "../controllers/AutentificacionLogin.js";
-import { validateCargarDocs,validaciondocumentos } from "../../validation/CargaDocsValidations.js";
+import { validateCargarDocs, validaciondocumentos } from "../../validation/CargaDocsValidations.js";
 const DocumentosController = Router()
 
 DocumentosController.get('/listar',validarToken,listarDocumentos)
