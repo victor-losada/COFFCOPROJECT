@@ -236,14 +236,71 @@
 
               <br>
 
-          
-              
-
-            
-
-               
-
-               
+              <h1 class="titulo">Buscar documentos</h1>
+              <div class="table-container">
+                  <table>
+                      <thead>
+                          <td>Nombre</td>
+                          <td>Descripcion</td>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>Buscar documentos</td>
+                              <td> 
+                              <p>
+                                  este apartado es para buscar docuemntos de la base de datos
+                              </p>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>http://localhost:3000/documentos/buscar<td>
+                          </tr>
+                          <tr>
+                              <td>Descripcion</td>
+                              <td> El sistema cuenta con una función de búsqueda que permita 
+                                a los usuarios buscar documentos utilizando el nombre </td>
+                          </tr>
+                          <tr>
+                              <td>Verbo HTTP</td>
+                              <td>post</td>
+                          </tr>
+                          <tr>
+                              <td>Header</td>
+                              <td>null</td>
+                          </tr>
+                          <tr>
+                              <td>Usuario</td>
+                              <td>Administrador,encargados</td>
+                          </tr>
+                          <tr>
+                              <td>Peticion Body</td>
+                              <td>'nombre':'procesos misionales'
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>Respuesta Json</td>
+                              <td>Correcto:   res.status(200).json( {
+                                "id": 2,<br>
+                                "nombre": "procesos misionales",<br>
+                                "descripcion": "documento procesos misionales",<br>
+                                "formato": "pdf"<br>
+                              },<br>
+                              {<br>
+                                "id": 4,<br>
+                                "nombre": "procesos misionales",<br>
+                                "descripcion": "documento procesos misionales",<br>
+                                "formato": "pdf"<br>
+                               }); 
+                            <br><br>
+                                  Incorrecto:  res.status(404).json({ message: "No se encontraron archivos en la base de datos" });
+                            <br><br>
+                                  Error:  res.status(500).json({ message: "Error en la conexion"+error.message });
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  </div>
 
               
     </section> 

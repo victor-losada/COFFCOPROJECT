@@ -10,7 +10,7 @@ import rutaFinca from "./src/routes/FincaRoute.js";
 import rutaDatos from "./src/routes/DatosRouters.js";
 import RutaAuth from "./src/routes/AutonteficacionRoutes.js";
 import EstadisticaRouter from "./src/routes/EstadisticaRouters.js";
-import routerDocumento from "./src/routes/documentosRoute.js";
+import routerDocumento from "./src/routes/DocumentosRoute.js";
 import routerDescarga from "./src/routes/descargaDocRoute.js";
 
 import cors from "cors"; 

@@ -75,3 +75,23 @@ export const actalizardocumentos = async (req, res) => {
         return res.status(500).json({"message":"error "+e.message})
     }
 }
+
+export const buscarDocumentos =async(req,res)=>{
+    
+    try {
+
+        let nombre = req.body.nombre
+        let sql = `select id_documentos from documentos where nombre = '${nombre}'`
+        const [rows] = await conexion.query(sql)
+
+        if(rows.length > 0){
+            return res.status(200).json(rows)
+        }
+        else{
+            return res.status(404).json({"message" : "No se encontraron archivos en la base de datos"})
+        }
+    } 
+    catch (error) {
+        res.status(500).json({"message":"error en la conexion"+error.menssage})
+    }
+}

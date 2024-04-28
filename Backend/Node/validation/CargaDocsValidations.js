@@ -8,3 +8,7 @@ export const validateCargarDocs=[
   check("formato", "El formato es obligatorio y debe tener máximo 100 caracteres").not().isEmpty().isLength({ max: 100 }),
 
 ]
+
+export const validaciondocumentos=[
+    check("nombre", "El nombre es obligatorio").not().isEmpty(),
+]
