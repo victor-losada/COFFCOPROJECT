@@ -6,4 +6,6 @@ const RutaAuth = Router()
 RutaAuth.post('/login',validationsLogin,validarUsuarios)
 
 
+
+
 export default RutaAuth
