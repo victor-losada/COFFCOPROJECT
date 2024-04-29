@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+        <br>
+
+ 
+
+  <br>
+
+    <h1 class="titulo">requerimiento cargar y eliminar  documento</h1>
+    <div class="table-container">
+        <table>
+            <thead>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>carga de documentos</td>
+                    <td> 
+                    <p>
+                        	La función de carga de documentos estará ubicada en la parte superior derecha del módulo gestión documental del sistema.<br>
+                             Al seleccionarla, se desplegará una ventana emergente con dos opciones: cargar un nuevo documento o actualizar uno existente.<br>
+                        	Para cargar un nuevo documento, se deberá completar un formulario con los siguientes campos:<br>
+                        •	Nombre del documento<br>
+                        •	Versión del documento<br>
+                        •	Fecha de carga<br>
+                        •	Estado <br>
+                        •	Formato (PDF, Excel, Word)<br>
+                        •	Nombre y rol del usuario que realiza la acción<br>
+                        •	nombre del usuario en caso de ser el encargado<br>
+                        	Al seleccionar la opción de actualizar un documento, se mostrará un formulario donde se deberá ingresar el nombre y la versión del documento a actualizar.<br>
+                             Posteriormente, se habilitará un botón de subir que permitirá reemplazar el documento.<br>
+                    	    Una vez el documento este actualizado, el documento anterior cambiara de estado y pasara a inactivo <br>
+                        	El botón de eliminación estará situado en la parte derecha de cada documento y estará disponible únicamente para el rol de administración.<br>
+                        	 En caso de que la solicitud de carga sea realizada por el rol de encargado, será enviada a revisión al rol de administrador y será validado por los roles que encuentren en el momento,<br>
+                              se requiere la aprobación de todos los administradores y solo se cargarán los documentos si cuentan con las aprobaciones.<br>
+                        	El rol de invitado no tendría acceso a ninguna de estas acciones 
+                        
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/archivo/registrar</td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td>Esta funcion permite registrar nuevos datos en la tabla archivos de la base de datos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>POST</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>null</td>
+                </tr>
+                <tr>
+                    <td>Usuario</td>
+                    <td>Administrador,encargados</td>
+                </tr>
+                <tr>
+                    <td>Peticion Body</td>
+                    <td>
+                        {<br>
+                            "nombre":"procesos misionales",<br>
+                            "fecha_carga":"2024-04-03",<br>
+                            "fk_id_usuarios":1,<br>
+                            "descripcion":"documento de procesos misionales",<br>
+                            "formato":"pdf"<br>
+                            }<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Respuesta Json</td>
+                    <td>Correcto: status:200.json({	"message":"Se registró con éxito el archivo"}) <br><br>
+                        Incorrecto: status(404).json({"message":"No se registró el archivo."}) <br><br>
+                        Error: status(500).json({"message":"error "+e.message})
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <br>
+
+   
+       
+
+        <br>
+        
+        <div class="table-container">
+        <table>
+            <thead>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>eliminar documento</td>
+                    <td> 
+                    <p>
+                        este apartado se para  eliminar,  los datos de la tabla archivos 
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/archivo/eliminar/:id_documentos</td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td>Esta funcion permite eliminar datos por el id  de la tabla archivos de la base de datos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>DELETE</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>null</td>
+                </tr>
+                <tr>
+                    <td>Usuario</td>
+                    <td>Administrador,encargados</td>
+                </tr>
+                <tr>
+                    <td>Peticion Body</td>
+                    <td>null
+                    </td>
+                </tr>
+                <tr>
+                    <td>Respuesta Json</td>
+                    <td>Correcto: status:200.json({	"message":"Se eliminó con éxito el archivo."}) <br><br>
+                        Incorrecto: status(404).json({"message":"No se eliminó el archivo."}) <br><br>
+                        Error: status(500).json({"message":"error "+e.message})
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <br>
+
+
+       
+        <br>
+      
+          <h1 class="titulo">Generar Estadistica</h1>
+          <div class="table-container">
+              <table>
+                  <thead>
+                      <td>Nombre</td>
+                      <td>Descripcion</td>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>generar Estadistica</td>
+                          <td> 
+                          <p>
+                              este apartado es para traer valores de la base de datos con el fin de generar graficos 
+                          </p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>URL</td>
+                          <td>http://localhost:3000/estadistica/td>
+                      </tr>
+                      <tr>
+                          <td>Descripcion</td>
+                          <td>Este apartado estará en los diferentes módulos del sistema como los servicios permitirá ver una estadística en tiempo real donde se muestre:<br>
+                            •	Mes donde mas se alquilo el laboratorio <br>
+                            •	fincas  que mas se les hace proceso y cuales son esos procesos <br>
+                                       Esta estadística estaría reflejada en un diagrama de barras en cada uno de los diferentes módulos 
+                            </td>
+                      </tr>
+                      <tr>
+                          <td>Verbo HTTP</td>
+                          <td>get</td>
+                      </tr>
+                      <tr>
+                          <td>Header</td>
+                          <td>null</td>
+                      </tr>
+                      <tr>
+                          <td>Usuario</td>
+                          <td>Administrador,encargados</td>
+                      </tr>
+                      <tr>
+                          <td>Peticion Body</td>
+                          <td>null
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>Respuesta Json</td>
+                          <td>Correcto:   res.status(200).json( {
+                            "cantidad": 33.33,<br>
+                            "fecha_muestra": "2024-04-08T05:00:00.000Z",<br>
+                            "nombre_finca": "el dorado",<br>
+                            "tipo_servicios": "tostion"<br>
+                          },<br>
+                          {<br>
+                            "cantidad": 44.55,<br>
+                            "fecha_muestra": "2024-04-10T05:00:00.000Z",<br>
+                            "nombre_finca": "el tigre",<br>
+                            "tipo_servicios": "trilla"<br>
+                          },<br>
+                          {<br>
+                            "cantidad": 20.366,<br>
+                            "fecha_muestra": "2024-04-05T05:00:00.000Z",<br>
+                            "nombre_finca": "consejo",<br>
+                            "tipo_servicios": "analisis fisico"<br>
+                          },<br>
+                          {<br>
+                            "cantidad": 20.366,<br>
+                            "fecha_muestra": "2024-04-05T05:00:00.000Z",<br>
+                            "nombre_finca": "consejo",<br>
+                            "tipo_servicios": "analisis sensorial"<br>
+                          }); <br><br>
+                              Incorrecto:  res.status(404).json({ message: "No se encontraron datos" }); <br><br>
+                              Error:  res.status(500).json({ message: "Error en la conexion"+error.message });
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+              </div>
+
+              <br>
+
+              <h1 class="titulo">Buscar documentos</h1>
+              <div class="table-container">
+                  <table>
+                      <thead>
+                          <td>Nombre</td>
+                          <td>Descripcion</td>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>Buscar documentos</td>
+                              <td> 
+                              <p>
+                                  este apartado es para buscar docuemntos de la base de datos
+                              </p>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>http://localhost:3000/documentos/buscar<td>
+                          </tr>
+                          <tr>
+                              <td>Descripcion</td>
+                              <td> El sistema cuenta con una función de búsqueda que permita 
+                                a los usuarios buscar documentos utilizando el nombre </td>
+                          </tr>
+                          <tr>
+                              <td>Verbo HTTP</td>
+                              <td>post</td>
+                          </tr>
+                          <tr>
+                              <td>Header</td>
+                              <td>null</td>
+                          </tr>
+                          <tr>
+                              <td>Usuario</td>
+                              <td>Administrador,encargados</td>
+                          </tr>
+                          <tr>
+                              <td>Peticion Body</td>
+                              <td>'nombre':'procesos misionales'
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>Respuesta Json</td>
+                              <td>Correcto:   res.status(200).json( {
+                                "id": 2,<br>
+                                "nombre": "procesos misionales",<br>
+                                "descripcion": "documento procesos misionales",<br>
+                                "formato": "pdf"<br>
+                              },<br>
+                              {<br>
+                                "id": 4,<br>
+                                "nombre": "procesos misionales",<br>
+                                "descripcion": "documento procesos misionales",<br>
+                                "formato": "pdf"<br>
+                               }); 
+                            <br><br>
+                                  Incorrecto:  res.status(404).json({ message: "No se encontraron archivos en la base de datos" });
+                            <br><br>
+                                  Error:  res.status(500).json({ message: "Error en la conexion"+error.message });
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  </div>
+ 
+ 
+
+                  <h1>requerimiento 6 Editar Documentos</h1> 
+
+ 
+ 
+ 
+
+  
+
+               
+
+                  <table> 
+                 
+                     <thead> 
+                 
+                         <td>Nombre</td> 
+                 
+                         <td>Descripcion</td> 
+                 
+                     </thead> 
+                 
+                     <tbody> 
+                 
+                         <tr> 
+                 
+                             <td>Editar Documentos</td> 
+                 
+                             <td>  
+                 
+                             <p> 
+                 
+                                 En la sección de servicios, se permitirá la edición de los documentos que contienen los formularios <br> 
+                 
+                                 de servicios y procesos.Esta funcionalidad estará habilitada para los roles de encargados <br> 
+                 
+                                 y administradores. En caso de que un usuario con rol de encargado edite la información, esta <br> 
+                 
+                                 será enviada con  solicitud de aprobación a todos lo administradores. <br> 
+                 
+                             </p> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>URL</td> 
+                 
+                             <td>http://localhost:3000/documentos/actualizar/:id_documentos</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Descripcion</td> 
+                 
+                             <td>Esta funcion permite actualizar nuevos datos en la tabla documentos de la base de datos</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Verbo HTTP</td> 
+                 
+                             <td>PUT</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Header</td> 
+                 
+                             <td>null</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Usuario</td> 
+                 
+                             <td>Administrador,encargados</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Peticion Body</td> 
+                 
+                             <td> 
+                 
+                                 { <br> 
+                 
+                                     "nombre": "procesos tecnologicos", <br> 
+                 
+                                     "fecha_carga": "2024-04-27", <br> 
+                 
+                                     "fk_id_usuarios": 1, <br> 
+                 
+                                     "fk_id_formatos": 1, <br> 
+                 
+                                     "descripcion": "documento de procesos tecnologicos", <br> 
+                 
+                                     "formato": "pdf", <br> 
+                 
+                                     "estado": "inactivo" <br> 
+                 
+                                 } <br> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Respuesta Json</td> 
+                 
+                             <td>Correcto: status:200.json({"message":"Se actualizó con éxito el documentos."}) <br><br> 
+                 
+                                 Incorrecto: status(404).json({"message":"No se actualizó el documentos."}) <br><br> 
+                 
+                                 Error: status(500).json({"message":"error "+e.message}) 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                     </tbody> 
+                 
+                 </table> 
+                 
+                 <br> 
+                 
+                  
+                  
+                 
+                 <h1>requerimiento 7 Administrar Usuarios</h1> 
+                 
+                  
+                  
+                 
+                                
+                 
+                  <table> 
+                 
+                     <thead> 
+                 
+                         <td>Nombre</td> 
+                 
+                         <td>Descripcion</td> 
+                 
+                     </thead> 
+                 
+                     <tbody> 
+                 
+                         <tr> 
+                 
+                             <td>Administrar Usuarios</td> 
+                 
+                             <td>  
+                 
+                             <p> 
+                 
+                                 El administrador es responsable de supervisar el sistema y de llevar a <br> 
+                 
+                                 cabo cualquier modificación en los roles y documentos. <br> 
+                 
+                                 Se debe implementar una política de bloqueo de cuenta después de un número <br> 
+                 
+                                 específico de intentos fallidos de inicio de sesión. <br> 
+                 
+                                 El sistema debe permitir la creación de roles de usuario, solicitando la  <br> 
+                 
+                                 siguiente información al momento de crear un nuevo usuario: <br> 
+                 
+                                 •Nombre<br> 
+                 
+                                 •Apellidos <br> 
+                 
+                                 •Correo electrónico <br> 
+                 
+                                 •Número de teléfono <br> 
+                 
+                                 •Rol<br> 
+                 
+                                 •Contraseña<br> 
+                 
+                                 •Numero de identificacion  <br> 
+                 
+                                 •tipo de documento  <br>         
+                 
+                             </p> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>URL</td> 
+                 
+                             <td>http://localhost:3000/usuario/registrar</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Descripcion</td> 
+                 
+                             <td>Esta funcion permite Registrar nuevos datos en la tabla usuarios de la base de datos</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Verbo HTTP</td> 
+                 
+                             <td>POST</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Header</td> 
+                 
+                             <td>null</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Usuario</td> 
+                 
+                             <td>Administrador,encargados</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Peticion Body</td> 
+                 
+                             <td> 
+                 
+                                 { <br> 
+                 
+                                     "nombre_usuario": "Daniel", <br> 
+                 
+                                     "apellido_usuario": "Yara", <br> 
+                 
+                                     "correo_electronico": "daniel@gmail.com", <br> 
+                 
+                                     "telefono_usuario": "3136156071", <br> 
+                 
+                                     "rol_usuario": "encargado", <br> 
+                 
+                                     "contraseña_usuario": "Daniel123", <br> 
+                 
+                                     "numero_identificacion": "1083860733", <br> 
+                 
+                                     "tipo_documento": "cc" <br> 
+                 
+                                 } <br> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Respuesta Json</td> 
+                 
+                             <td>Correcto: status:200.json({'message':'Se registro el usuario con exito'}) <br><br> 
+                 
+                                 Incorrecto: status(404).json({'message':'No se pudo registrar el usuario'}) <br><br> 
+                 
+                                 Error: status(500).json({'message':'Error'+error.message}) 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                     </tbody> 
+                 
+                 </table> 
+                 
+                 <br> 
+                 
+                  
+                  
+                  
+                  
+                  
+                 
+                 <br> 
+                 
+                  
+                  
+                 
+                 <h1>requerimiento 7 Administrar Usuarios</h1> 
+                 
+                  
+                  
+                 
+                                
+                 
+                  <table> 
+                 
+                     <thead> 
+                 
+                         <td>Nombre</td> 
+                 
+                         <td>Descripcion</td> 
+                 
+                     </thead> 
+                 
+                     <tbody> 
+                 
+                         <tr> 
+                 
+                             <td>Administrar Usuarios</td> 
+                 
+                             <td>  
+                 
+                             <p> 
+                 
+                             Generar token    
+                 
+                             </p> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>URL</td> 
+                 
+                             <td>http://localhost:3000/validar</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Descripcion</td> 
+                 
+                             <td>Esta funcion permite Generar un token de usuarios en la base de datos</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Verbo HTTP</td> 
+                 
+                             <td>POST</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Header</td> 
+                 
+                             <td>null</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Usuario</td> 
+                 
+                             <td>Administrador,encargados</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Peticion Body</td> 
+                 
+                             <td> 
+                 
+                                 { <br> 
+                 
+                                     "numero_identificacion": "1083860733", <br> 
+                 
+                                     "contraseña_usuario": "Daniel123" <br> 
+                 
+                                 } <br> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Respuesta Json</td> 
+                 
+                             <td>Correcto: status:200.json({  <br> 
+                 
+                                 "user": [ <br> 
+                 
+                                     { <br> 
+                 
+                                         "nombre_usuario": "Daniel", <br> 
+                 
+                                         "rol_usuario": "encargado" <br> 
+                 
+                                     } <br> 
+                 
+                                 ], <br> 
+                 
+                                 "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJub21icmVfd <br> 
+                 
+                                 XN1YXJpbyI6IkRhbmllbCIsInJvbF91c3VhcmlvIjoiZW5jYXJnYWRvIn1dLCJpYXQiOjE3MT <br> 
+                 
+                                 QyNDk5NjUsImV4cCI6MTcxNDMzNjM2NX0.H7M42JyUge0XCUqluAXSYVoNq_VQLXX0l0gfzvn_vQA", <br> 
+                 
+                                 "mensaje": "usuario autorizado"<br> 
+                 
+                             }) <br> 
+                 
+                                 Incorrecto: status(404).json({"menssage": "Usuario no autorizado"}) <br><br> 
+                 
+                                 Error: status(500).json({"Error en el servidor"+error.message}) 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                     </tbody> 
+                 
+                 </table> 
+                 
+                 <br> 
+                 
+                  
+                  
+                  
+                  
+                  
+                  
+                 
+                 <br> 
+                 
+                  
+                  
+                 
+                 <h1>requerimiento 7 Administrar Usuarios</h1> 
+                 
+                  
+                  
+                 
+                                
+                 
+                  <table> 
+                 
+                     <thead> 
+                 
+                         <td>Nombre</td> 
+                 
+                         <td>Descripcion</td> 
+                 
+                     </thead> 
+                 
+                     <tbody> 
+                 
+                         <tr> 
+                 
+                             <td>Administrar Usuarios</td> 
+                 
+                             <td>  
+                 
+                             <p> 
+                 
+                                 El administrador es responsable de supervisar el sistema y de llevar a <br> 
+                 
+                                 cabo cualquier modificación en los roles y documentos. <br> 
+                 
+                                 Se debe implementar una política de bloqueo de cuenta después de un número <br> 
+                 
+                                 específico de intentos fallidos de inicio de sesión. <br> 
+                 
+                                 El sistema debe permitir la creación de roles de usuario, solicitando la  <br> 
+                 
+                                 siguiente información al momento de crear un nuevo usuario: <br> 
+                 
+                                 •Nombre<br> 
+                 
+                                 •Apellidos <br> 
+                 
+                                 •Correo electrónico <br> 
+                 
+                                 •Número de teléfono <br> 
+                 
+                                 •Rol<br> 
+                 
+                                 •Contraseña<br> 
+                 
+                                 •Numero de identificacion  <br> 
+                 
+                                 •tipo de documento  <br>         
+                 
+                             </p> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>URL</td> 
+                 
+                             <td>http://localhost:3000/usuario/listar</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Descripcion</td> 
+                 
+                             <td>Esta funcion permite listar usuarios de la tabla usuarios de la base de datos</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Verbo HTTP</td> 
+                 
+                             <td>GET</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Header</td> 
+                 
+                             <td>token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJub21icmVf <br> 
+                 
+                                 dXN1YXJpbyI6IkRhbmllbCIsInJvbF91c3VhcmlvIjoiZW5jYXJnYWRvIn1dLCJpYXQiOj <br> 
+                 
+                                 E3MTQyNDk5NjUsImV4cCI6MTcxNDMzNjM2NX0.H7M42JyUge0XCUqluAXSYVoNq_VQLXX0l0gfzvn_vQA <br> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Usuario</td> 
+                 
+                             <td>Administrador,encargados</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Peticion Body</td> 
+                 
+                             <td> 
+                 
+                                null 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Respuesta Json</td> 
+                 
+                             <td>Correcto: status:200.json(   <br> 
+                 
+                             { <br> 
+                 
+                                 "id_usuario": 4, <br> 
+                 
+                                 "nombre_usuario": "Daniel",<br> 
+                 
+                                 "apellido_usuario": "Yara",<br> 
+                 
+                                 "correo_electronico": "daniel@gmail.com",<br> 
+                 
+                                 "telefono_usuario": "3136156071",<br> 
+                 
+                                 "rol_usuario": "encargado",<br> 
+                 
+                                 "contraseña_usuario": "Daniel123",<br> 
+                 
+                                 "numero_identificacion": "1083860733",<br> 
+                 
+                                 "tipo_documento": null <br> 
+                 
+                             }) <br> 
+                 
+                                 Incorrecto: status(402).json({"mensaje":"se requiere un token}) <br><br> 
+                 
+                                 Error: status(402).json({"mensaje":"token invalido"}) 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                     </tbody> 
+                 
+                 </table> 
+                 
+                 <br> 
+                 
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                 
+                 <h1>requerimiento 7 Administrar Usuarios</h1> 
+                 
+                  
+                  
+                 
+                                
+                 
+                  <table> 
+                 
+                     <thead> 
+                 
+                         <td>Nombre</td> 
+                 
+                         <td>Descripcion</td> 
+                 
+                     </thead> 
+                 
+                     <tbody> 
+                 
+                         <tr> 
+                 
+                             <td>Administrar Usuarios</td> 
+                 
+                             <td>  
+                 
+                             <p> 
+                 
+                                 El administrador es responsable de supervisar el sistema y de llevar a <br> 
+                 
+                                 cabo cualquier modificación en los roles y documentos. <br> 
+                 
+                                 Se debe implementar una política de bloqueo de cuenta después de un número <br> 
+                 
+                                 específico de intentos fallidos de inicio de sesión. <br> 
+                 
+                                 El sistema debe permitir la creación de roles de usuario, solicitando la  <br> 
+                 
+                                 siguiente información al momento de crear un nuevo usuario: <br> 
+                 
+                                 •Nombre<br> 
+                 
+                                 •Apellidos <br> 
+                 
+                                 •Correo electrónico <br> 
+                 
+                                 •Número de teléfono <br> 
+                 
+                                 •Rol<br> 
+                 
+                                 •Contraseña<br> 
+                 
+                                 •Numero de identificacion  <br> 
+                 
+                                 •tipo de documento  <br>         
+                 
+                             </p> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>URL</td> 
+                 
+                             <td>http://localhost:3000/usuario/listarid/:id</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Descripcion</td> 
+                 
+                             <td>Esta funcion permite listar por id usuarios de la tabla usuarios de la base de datos</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Verbo HTTP</td> 
+                 
+                             <td>GET</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Header</td> 
+                 
+                             <td>token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJub21icmVf <br> 
+                 
+                                 dXN1YXJpbyI6IkRhbmllbCIsInJvbF91c3VhcmlvIjoiZW5jYXJnYWRvIn1dLCJpYXQiOj <br> 
+                 
+                                 E3MTQyNDk5NjUsImV4cCI6MTcxNDMzNjM2NX0.H7M42JyUge0XCUqluAXSYVoNq_VQLXX0l0gfzvn_vQA <br> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Usuario</td> 
+                 
+                             <td>Administrador,encargados</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Peticion Body</td> 
+                 
+                             <td> 
+                 
+                                null 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Respuesta Json</td> 
+                 
+                             <td>Correcto: status:200.json(   <br> 
+                 
+                             { <br> 
+                 
+                                 "id_usuario": 4, <br> 
+                 
+                                 "nombre_usuario": "Daniel",<br> 
+                 
+                                 "apellido_usuario": "Yara",<br> 
+                 
+                                 "correo_electronico": "daniel@gmail.com",<br> 
+                 
+                                 "telefono_usuario": "3136156071",<br> 
+                 
+                                 "rol_usuario": "encargado",<br> 
+                 
+                                 "contraseña_usuario": "Daniel123",<br> 
+                 
+                                 "numero_identificacion": "1083860733",<br> 
+                 
+                                 "tipo_documento": null <br> 
+                 
+                             }) <br> 
+                 
+                                 Incorrecto: status(402).json({"mensaje":"se requiere un token}) <br><br> 
+                 
+                                 Error: status(402).json({"mensaje":"token invalido"}) 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                     </tbody> 
+                 
+                 </table> 
+                 
+                 <br> 
+                 
+                  
+                  
+                  
+                 
+                 <br> 
+                 
+                  
+                  
+                 
+                 <h1>requerimiento 7 Administrar Usuarios</h1> 
+                 
+                  
+                  
+                 
+                                
+                 
+                  <table> 
+                 
+                     <thead> 
+                 
+                         <td>Nombre</td> 
+                 
+                         <td>Descripcion</td> 
+                 
+                     </thead> 
+                 
+                     <tbody> 
+                 
+                         <tr> 
+                 
+                             <td>Administrar Usuarios</td> 
+                 
+                             <td>  
+                 
+                             <p> 
+                 
+                                 El administrador es responsable de supervisar el sistema y de llevar a <br> 
+                 
+                                 cabo cualquier modificación en los roles y documentos. <br> 
+                 
+                                 Se debe implementar una política de bloqueo de cuenta después de un número <br> 
+                 
+                                 específico de intentos fallidos de inicio de sesión. <br> 
+                 
+                                 El sistema debe permitir la creación de roles de usuario, solicitando la  <br> 
+                 
+                                 siguiente información al momento de crear un nuevo usuario: <br> 
+                 
+                                 •Nombre<br> 
+                 
+                                 •Apellidos <br> 
+                 
+                                 •Correo electrónico <br> 
+                 
+                                 •Número de teléfono <br> 
+                 
+                                 •Rol<br> 
+                 
+                                 •Contraseña<br> 
+                 
+                                 •Numero de identificacion  <br> 
+                 
+                                 •tipo de documento  <br>         
+                 
+                             </p> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>URL</td> 
+                 
+                             <td>http://localhost:3000/usuario/actualizar/:id_usuario</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Descripcion</td> 
+                 
+                             <td>Esta funcion permite actualizar nuevos datos en la tabla usuarios de la base de datos</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Verbo HTTP</td> 
+                 
+                             <td>PUT</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Header</td> 
+                 
+                             <td>token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJub21icmVf <br> 
+                 
+                                 dXN1YXJpbyI6IkRhbmllbCIsInJvbF91c3VhcmlvIjoiZW5jYXJnYWRvIn1dLCJpYXQiOj <br> 
+                 
+                                 E3MTQyNDk5NjUsImV4cCI6MTcxNDMzNjM2NX0.H7M42JyUge0XCUqluAXSYVoNq_VQLXX0l0gfzvn_vQA <br> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Usuario</td> 
+                 
+                             <td>Administrador,encargados</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Peticion Body</td> 
+                 
+                             <td> 
+                 
+                                 { <br> 
+                 
+                                     "nombre_usuario": "Alejandro", <br> 
+                 
+                                     "apellido_usuario": "Losada", <br> 
+                 
+                                     "correo_electronico": "alejandro@gmail.com", <br> 
+                 
+                                     "telefono_usuario": "3203460792", <br> 
+                 
+                                     "rol_usuario": "encargado", <br> 
+                 
+                                     "contraseña_usuario": "Alejandro", <br> 
+                 
+                                     "numero_identificacion": "1083860733", <br> 
+                 
+                                     "tipo_documento": null <br> 
+                 
+                                 } <br> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Respuesta Json</td> 
+                 
+                             <td>Correcto: status:200.json({'message':'Se registro el usuario con exito'}) <br><br> 
+                 
+                                 Incorrecto: status(404).json({'message':'No se pudo registrar el usuario'}) <br><br> 
+                 
+                                 Error: status(500).json({'message':'Error'+error.message}) 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                     </tbody> 
+                 
+                 </table> 
+                 
+                 <br> 
+                 
+                  
+                  
+                  
+                 
+                 <br> 
+                 
+                  
+                  
+                 
+                 <h1>requerimiento 7 Administrar Usuarios</h1> 
+                 
+                  
+                  
+                 
+                                
+                 
+                  <table> 
+                 
+                     <thead> 
+                 
+                         <td>Nombre</td> 
+                 
+                         <td>Descripcion</td> 
+                 
+                     </thead> 
+                 
+                     <tbody> 
+                 
+                         <tr> 
+                 
+                             <td>Administrar Usuarios</td> 
+                 
+                             <td>  
+                 
+                             <p> 
+                 
+                                 El administrador es responsable de supervisar el sistema y de llevar a <br> 
+                 
+                                 cabo cualquier modificación en los roles y documentos. <br> 
+                 
+                                 Se debe implementar una política de bloqueo de cuenta después de un número <br> 
+                 
+                                 específico de intentos fallidos de inicio de sesión. <br> 
+                 
+                                 El sistema debe permitir la creación de roles de usuario, solicitando la  <br> 
+                 
+                                 siguiente información al momento de crear un nuevo usuario: <br> 
+                 
+                                 •Nombre<br> 
+                 
+                                 •Apellidos <br> 
+                 
+                                 •Correo electrónico <br> 
+                 
+                                 •Número de teléfono <br> 
+                 
+                                 •Rol<br> 
+                 
+                                 •Contraseña<br> 
+                 
+                                 •Numero de identificacion  <br> 
+                 
+                                 •tipo de documento  <br>         
+                 
+                             </p> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>URL</td> 
+                 
+                             <td>http://localhost:3000/usuario/eliminar/:id_usuario</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Descripcion</td> 
+                 
+                             <td>Esta funcion permite eliminar nuevos datos en la tabla usuarios de la base de datos</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Verbo HTTP</td> 
+                 
+                             <td>DELETE</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Header</td> 
+                 
+                             <td>token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJub21icmVf <br> 
+                 
+                                 dXN1YXJpbyI6IkRhbmllbCIsInJvbF91c3VhcmlvIjoiZW5jYXJnYWRvIn1dLCJpYXQiOj <br> 
+                 
+                                 E3MTQyNDk5NjUsImV4cCI6MTcxNDMzNjM2NX0.H7M42JyUge0XCUqluAXSYVoNq_VQLXX0l0gfzvn_vQA <br> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Usuario</td> 
+                 
+                             <td>Administrador</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Peticion Body</td> 
+                 
+                             <td> 
+                 
+                                 null 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Respuesta Json</td> 
+                 
+                             <td>Correcto: status:200.json({"message": "El usuario se elimiino con exito"}) <br><br> 
+                 
+                                 Incorrecto: status(402).json({"mensaje": "token invalido"}) <br><br> 
+                 
+                                 Error: status(500).json({"mensaje": "se requiere un token"}) 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                     </tbody> 
+                 
+                 </table> 
+                 
+                 <br> 
+                 
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                 
+                 <h1>requerimiento 14 Revisar y aprobar documentos</h1> 
+                 
+                  
+                  
+                  
+                 
+                   
+                 
+                                
+                 
+                  <table> 
+                 
+                     <thead> 
+                 
+                         <td>Nombre</td> 
+                 
+                         <td>Descripcion</td> 
+                 
+                     </thead> 
+                 
+                     <tbody> 
+                 
+                         <tr> 
+                 
+                             <td>Revisar Documentos</td> 
+                 
+                             <td>  
+                 
+                             <p> 
+                 
+                                 En la sección de servicios, se permitirá la edición de los documentos que contienen los formularios <br> 
+                 
+                                 de servicios y procesos.Esta funcionalidad estará habilitada para los roles de encargados <br> 
+                 
+                                 y administradores. En caso de que un usuario con rol de encargado edite la información, esta <br> 
+                 
+                                 será enviada con  solicitud de aprobación a todos lo administradores. <br> 
+                 
+                             </p> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>URL</td> 
+                 
+                             <td>http://localhost:3000/documentos/listar</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Descripcion</td> 
+                 
+                             <td>Esta funcion permite listar datos de la tabla documentos de la base de datos</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Verbo HTTP</td> 
+                 
+                             <td>GET</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Header</td> 
+                 
+                             <td>null</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Usuario</td> 
+                 
+                             <td>Administrador,encargados</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Peticion Body</td> 
+                 
+                             <td> Null 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Respuesta Json</td> 
+                 
+                             <td>Correcto: status:200.json([ <br> 
+                 
+                                 {<br> 
+                 
+                                     "id_documentos": 2,<br> 
+                 
+                                     "nombre": "procesos misionales",<br> 
+                 
+                                     "fecha_carga": "2024-04-03T05:00:00.000Z",<br> 
+                 
+                                     "fk_id_usuarios": 1,<br> 
+                 
+                                     "descripcion": "documento de procesos misionales",<br> 
+                 
+                                     "formato": "pdf",<br> 
+                 
+                                     "estado": "activo"<br> 
+                 
+                                 },<br> 
+                 
+                                 {<br> 
+                 
+                                     "id_documentos": 4,<br> 
+                 
+                                     "nombre": "procesos tecnologicos",<br> 
+                 
+                                     "fecha_carga": "2024-04-27T05:00:00.000Z",<br> 
+                 
+                                     "fk_id_usuarios": 1,<br> 
+                 
+                                     "descripcion": "documento de procesos tecnologicos",<br> 
+                 
+                                     "formato": "pdf",<br> 
+                 
+                                     "estado": "inactivo"<br> 
+                 
+                                 }<br> 
+                 
+                             ]) <br> 
+                 
+                                 Incorrecto: status(404).json({"message" : "No se encontraron archivos en la base de datos"}) <br><br> 
+                 
+                                 Error: status(500).json({"message" : "Error en el controlador DocumentosController.js " + err}) 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                     </tbody> 
+                 
+                 </table> 
+                 
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                 
+                 <h1>requerimiento 14 Revisar y aprobar documentos</h1> 
+                 
+                  
+                  
+                  
+                 
+                   
+                 
+                                
+                 
+                  <table> 
+                 
+                     <thead> 
+                 
+                         <td>Nombre</td> 
+                 
+                         <td>Descripcion</td> 
+                 
+                     </thead> 
+                 
+                     <tbody> 
+                 
+                         <tr> 
+                 
+                             <td>Aprobar Documentos</td> 
+                 
+                             <td>  
+                 
+                             <p> 
+                 
+                                 En la sección de servicios, se permitirá la edición de los documentos que contienen los formularios <br> 
+                 
+                                 de servicios y procesos.Esta funcionalidad estará habilitada para los roles de encargados <br> 
+                 
+                                 y administradores. En caso de que un usuario con rol de encargado edite la información, esta <br> 
+                 
+                                 será enviada con  solicitud de aprobación a todos lo administradores. <br> 
+                 
+                             </p> 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>URL</td> 
+                 
+                             <td>http://localhost:3000/documentos/listar</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Descripcion</td> 
+                 
+                             <td>Esta funcion permite aprobar documentos de la tabla documentos de la base de datos</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Verbo HTTP</td> 
+                 
+                             <td>GET</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Header</td> 
+                 
+                             <td>null</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Usuario</td> 
+                 
+                             <td>Administrador</td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Peticion Body</td> 
+                 
+                             <td> Null 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                         <tr> 
+                 
+                             <td>Respuesta Json</td> 
+                 
+                             <td>Correcto: status:200.json([ <br> 
+                 
+                                 {<br> 
+                 
+                                     "id_documentos": 2,<br> 
+                 
+                                     "nombre": "procesos misionales",<br> 
+                 
+                                     "fecha_carga": "2024-04-03T05:00:00.000Z",<br> 
+                 
+                                     "fk_id_usuarios": 1,<br> 
+                 
+                                     "descripcion": "documento de procesos misionales",<br> 
+                 
+                                     "formato": "pdf",<br> 
+                 
+                                     "estado": "activo"<br> 
+                 
+                                 },<br> 
+                 
+                                 {<br> 
+                 
+                                     "id_documentos": 4,<br> 
+                 
+                                     "nombre": "procesos tecnologicos",<br> 
+                 
+                                     "fecha_carga": "2024-04-27T05:00:00.000Z",<br> 
+                 
+                                     "fk_id_usuarios": 1,<br> 
+                 
+                                     "descripcion": "documento de procesos tecnologicos",<br> 
+                 
+                                     "formato": "pdf",<br> 
+                 
+                                     "estado": "inactivo"<br> 
+                 
+                                 }<br> 
+                 
+                             ]) <br> 
+                 
+                                 Incorrecto: status(404).json({"message" : "No se encontraron archivos en la base de datos"}) <br><br> 
+                 
+                                 Error: status(500).json({"message" : "Error en el controlador DocumentosController.js " + err}) 
+                 
+                             </td> 
+                 
+                         </tr> 
+                 
+                     </tbody> 
+                 
+                 </table> 
+                 
+                  
+                  
+              
+    </section> 
+</div>
+</body>
+</html>
+
+
+

@@ -2,37 +2,63 @@ import express from "express";
 import bodyParser from "body-parser";
 import rutaMunicipio from "./src/routes/municipioRoute.js";
 import ruta from "./src/routes/muestraRoutes.js";
+<<<<<<< HEAD
+import DocumentosRoute from "./src/routes/DocumentosRoute.js";
+import FormatoRoute from './src/routes/FormatoRoute.js';
+=======
 import DocumentosController from "./src/routes/DocumentosRoute.js";
 import rutaVersion from "./src/routes/VersionesRoute.js";
+>>>>>>> 4ac6141967c22331d94c2fbe4278dbceac01b6b6
 import rutaUsuario from './src/routes/usuarioRoute.js';
 import rutaDetalle from "./src/routes/detalleRoute.js";
 import rutaFinca from "./src/routes/FincaRoute.js";
 import rutaDatos from "./src/routes/DatosRouters.js";
+<<<<<<< HEAD
+import RutaAuth from "./src/routes/AutonteficacionRoutes.js";
+import EstadisticaRouter from "./src/routes/EstadisticaRouters.js";
+import routerDocumento from "./src/routes/DocumentosRoute.js";
+import routerDescarga from "./src/routes/descargaDocRoute.js";
+
+=======
 import autenticacionRoute from "./src/routes/UsuarioAutenticationRoute.js";
+>>>>>>> 4ac6141967c22331d94c2fbe4278dbceac01b6b6
 import cors from "cors"; 
 
-const servidor = express(); 
+
+
+const servidor = express();
+
 servidor.use(bodyParser.json());
 servidor.use(bodyParser.urlencoded({ extended: true }));
 servidor.set('view engine', 'ejs');
 servidor.set('views', './views');
 servidor.use(express.static('./public')); 
-
 servidor.use(cors());
-
 servidor.use('/documents', (req, res) => {
     res.render('documentacion.ejs');
 });
 
 servidor.use("/municipio", rutaMunicipio);
 servidor.use("/muestra", ruta);
+<<<<<<< HEAD
+servidor.use("/documentos",DocumentosRoute );
+servidor.use("/versiones", FormatoRoute);
+=======
 servidor.use("/documentos", DocumentosController);
 servidor.use("/versiones", rutaVersion);
+>>>>>>> 4ac6141967c22331d94c2fbe4278dbceac01b6b6
 servidor.use('/usuario', rutaUsuario);
 servidor.use('/detalle', rutaDetalle);
 servidor.use('/finca', rutaFinca);
 servidor.use('/datos', rutaDatos);
+<<<<<<< HEAD
+servidor.use('/autenticacion',RutaAuth);
+servidor.use('/estadistica',EstadisticaRouter);
+servidor.use('/documentos',routerDocumento);
+servidor.use('/descarga',routerDescarga);
+=======
 servidor.use(autenticacionRoute)
+>>>>>>> 4ac6141967c22331d94c2fbe4278dbceac01b6b6
 
 
 
