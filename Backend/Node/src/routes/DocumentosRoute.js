@@ -3,7 +3,6 @@ import { listarDocumentos, registrarDocumentos, eliminarDocumentos, actalizardoc
 import { validarToken } from "../controllers/AutentificacionLogin.js";
 import { validateCargarDocs } from "../../validation/CargaDocsValidations.js";
 const DocumentosController = Router()
-
 DocumentosController.get('/listar',validarToken,listarDocumentos)
 DocumentosController.post('/registrar', validarToken,validateCargarDocs,registrarDocumentos)
 DocumentosController.delete('/eliminar/:id_documentos',validarToken, eliminarDocumentos)
