@@ -1,13 +1,13 @@
 import { Router } from "express";
 import { actualizarUsuario, eliminarUsuario, listarUsuario, listarUsuarioId, registrarUsuario } from "../controllers/usuarioController.js";
-
+import { validarToken } from "../controllers/AutentificacionLogin.js";
 const rutaUsuario= Router()
 
-rutaUsuario.get('/listar',listarUsuario)
-rutaUsuario.get('/listar/:id', listarUsuarioId)
-rutaUsuario.post('/registrar',registrarUsuario)
-rutaUsuario.delete('/eliminar/:id', eliminarUsuario)
-rutaUsuario.put('/actualizar/:id',actualizarUsuario)
+rutaUsuario.get('/listar',validarToken,listarUsuario)
+rutaUsuario.get('/listar/:id',validarToken, listarUsuarioId)
+rutaUsuario.post('/registrar',validarToken,registrarUsuario)
+rutaUsuario.delete('/eliminar/:id', validarToken,eliminarUsuario)
+rutaUsuario.put('/actualizar/:id',validarToken,actualizarUsuario)
 
 
 export default rutaUsuario
