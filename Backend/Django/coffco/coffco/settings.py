@@ -20,7 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = 'django-insecure-pn!&&id6_=&flc96s^mhe&(klitbff=vy@=y5jyaf8%uz_0r^9'
+=======
+SECRET_KEY = 'django-insecure--8(c$1u%ka6a=_bz#fe3tib*9f)5$q!d*irp7x*-5k2#u8lr(b'
+>>>>>>> 4ac6141967c22331d94c2fbe4278dbceac01b6b6
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'rest_framework',
     'documentos',
     'finca',
@@ -44,6 +49,8 @@ INSTALLED_APPS = [
     'servicios',
     'usuario',
     'drf_yasg',
+=======
+>>>>>>> 4ac6141967c22331d94c2fbe4278dbceac01b6b6
 ]
 
 MIDDLEWARE = [
@@ -82,12 +89,17 @@ WSGI_APPLICATION = 'coffco.wsgi.application'
 
 DATABASES = {
     'default': {
+<<<<<<< HEAD
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'coffco_django',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
+=======
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+>>>>>>> 4ac6141967c22331d94c2fbe4278dbceac01b6b6
     }
 }
 
@@ -127,9 +139,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+<<<<<<< HEAD
 STATIC_ROOT = './static/'
 
 AUTH_USER_MODEL = 'user.User'
+=======
+
+>>>>>>> 4ac6141967c22331d94c2fbe4278dbceac01b6b6
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

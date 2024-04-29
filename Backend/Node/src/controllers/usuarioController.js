@@ -17,8 +17,8 @@ export const listarUsuario = async (req,res)=>{
 
 export const listarUsuarioId = async (req,res) => {
     try {
-        let id = req.params.id
-        let sql =`select * from usuarios where id_usuario=${id}`
+        let id_usuario = req.params.id_usuario
+        let sql =`select * from usuarios where id_usuario=${id_usuario}`
         const [respuesta] = await conexion.query(sql)
         if(respuesta.length==1){
             res.status(200).json(respuesta)
@@ -43,6 +43,22 @@ export const registrarUsuario = async (req,res)=>{
         }
     } catch (error) {
         res.status(500).json({message:'Error en el servidor'+error.message})
+
+    }
+}
+
+export const eliminarUsuario = async (req,res)=>{
+    try {
+        let id_usuario=req.params.id_usuario
+        let sql=`delete from usuarios where id_usuario=${id_usuario}`
+        const [respuesta]= await conexion.query(sql)
+        if(respuesta.affectedRows>0){
+            res.status(200).json({'message':'El usuario se elimiino con exito'})
+        }else{
+            res.status(404).json({'message':'Error'+error.message})
+        }
+    } catch (error) {
+        res.status(500).json({'message':'Errror'+error.message})
     }
 }
 
@@ -53,6 +69,7 @@ export const actualizarUsuario = async (req,res)=>{
         let sql=`update usuarios set nombre_usuario='${nombre_usuario}', apellido_usuario='${apellido_usuario}',
          correo_electronico='${correo_electronico}', telefono_usuario='${telefono_usuario}',rol_usuario='${rol_usuario}', 
          contraseña_usuario='${contraseña_usuario}',numero_identificacion=${numero_identificacion},tipo_documento='${tipo_documento}' where id_usuario='${id}'`
+
         const [respuesta]= await conexion.query(sql)
 
         if(respuesta.affectedRows>0){
@@ -66,21 +83,3 @@ export const actualizarUsuario = async (req,res)=>{
     }
 
 }
-
-export const eliminarUsuario = async (req,res)=>{
-    try {
-        let id=req.params.id
-        let sql=`delete from usuarios where id_usuario=${id}`
-        const [respuesta]= await conexion.query(sql)
-        if(respuesta.affectedRows>0){
-            res.status(200).json({message:'El usuario se elimiino con exito'})
-        }else{
-            res.status(404).json({message:'Error'+error.message})
-        }
-    } catch (error) {
-        res.status(500).json({message:'Errror en el servidor'+error.message})
-    }
-}
-
-
-

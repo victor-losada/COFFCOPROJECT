@@ -38,7 +38,11 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD
 VIRTUAL_ENV="C:\Miguel-Osorio\coffco\Backend\Django\entorno"
+=======
+VIRTUAL_ENV="C:\Miguel-Osorio\coffcoo\Backend\Django\entorno"
+>>>>>>> 4ac6141967c22331d94c2fbe4278dbceac01b6b6
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

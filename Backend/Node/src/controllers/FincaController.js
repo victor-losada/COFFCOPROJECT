@@ -70,3 +70,21 @@ export const actualizarFincas = async (req, res) => {
         return res.status(500).json({ "message": "error " + e.message });
     }
 }
+
+
+export const ListaridFincas=async(req,res)=>{
+    try {
+        let id_finca=req.params.id_finca
+        let sql=`select * from finca where id_finca=${id_finca}`
+        const [responde]= await conexion.query(sql)
+        if(responde.length == 1){
+            res.status(200).json(responde)
+        }
+        else{
+            res.status(500).json({"message":"dato no encontrado"})
+        }
+        
+    } catch (error) {
+        res.status(500).json({"menssage":"error en la conexion"+error.menssage})
+    }
+    }

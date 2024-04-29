@@ -15,6 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+<<<<<<< HEAD
 from documentos.api.Routers import router
 from django.urls import path,include
 from drf_yasg.views import get_schema_view
@@ -36,4 +37,10 @@ urlpatterns = [
     path('api/',include(router.urls)),
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redocS/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+=======
+from django.urls import path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+>>>>>>> 4ac6141967c22331d94c2fbe4278dbceac01b6b6
 ]
