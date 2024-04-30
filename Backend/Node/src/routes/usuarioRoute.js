@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { actualizarUsuario, eliminarUsuario, listarUsuario, listarUsuarioId, registrarUsuario } from "../controllers/usuarioController.js";
-import { validateUser } from "../validation/UsuariosValidator.js";
+import { validateUser } from "../../validation/UsuariosValidator.js";
 import { validarToken, validarUsuarios } from "../controllers/AutentificacionLogin.js";
 const rutaUsuario= Router()
 
