@@ -8,7 +8,7 @@ import rutaUsuario from './src/routes/usuarioRoute.js';
 import rutaDetalle from "./src/routes/detalleRoute.js";
 import rutaFinca from "./src/routes/FincaRoute.js";
 import rutaDatos from "./src/routes/DatosRouters.js";
-import alquilerLab from "./src/routes/alquilerRoute.js";
+
 import cors from "cors"; 
 import RutaAuth from "./src/routes/AutonteficacionRoutes.js";
 import EstadisticaRouter from "./src/routes/EstadisticaRouters.js";
@@ -34,7 +34,6 @@ servidor.use('/usuario', rutaUsuario);
 servidor.use('/detalle', rutaDetalle);
 servidor.use('/finca', rutaFinca);
 servidor.use('/datos', rutaDatos);
-servidor.use('/alquiler',alquilerLab)
 
 servidor.use(EstadisticaRouter)
 servidor.use(RutaAuth)
