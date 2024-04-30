@@ -71,13 +71,7 @@ export const actualizarUsuario = async (req,res)=>{
       
         let id=req.params.id
         let {nombre_usuario,apellido_usuario,correo_electronico,telefono_usuario,rol_usuario,contraseña_usuario,numero_identificacion,tipo_documento}=req.body
-<<<<<<< HEAD
-        let sql=`update usuarios set nombre_usuario='${nombre_usuario}', apellido_usuario='${apellido_usuario}',
-         correo_electronico='${correo_electronico}', telefono_usuario='${telefono_usuario}',rol_usuario='${rol_usuario}', 
-         contraseña_usuario='${contraseña_usuario}',numero_identificacion=${numero_identificacion},tipo_documento='${tipo_documento}' where id_usuario='${id}'`
 
-        const [respuesta]= await conexion.query(sql)
-=======
         let hashPassword = await bcryptjs.hash(contraseña_usuario,salt)
         console.log(hashPassword)
         let sql=`update usuarios set nombre_usuario='${nombre_usuario}', apellido_usuario='${apellido_usuario}',
@@ -85,7 +79,6 @@ export const actualizarUsuario = async (req,res)=>{
          contraseña_usuario='${hashPassword}',numero_identificacion=${numero_identificacion},tipo_documento='${tipo_documento}' where id_usuario='${id}'`
      
          const [respuesta]= await conexion.query(sql)
->>>>>>> 3a5dff712f84e244d644bf7d7af90c62cf5b0751
 
         if(respuesta.affectedRows>0){
             res.status(200).json({'message':'Usuario actualizo'})
