@@ -3,7 +3,7 @@ import { conexion } from "../database/conexion.js"
 export const variablesSegunVersiones = async (req, res) => {
     const { versionData, idDocumento, idVersionAnterior } = req.body;
 
-
+    
     const connection = await conexion.getConnection();
     await connection.beginTransaction();
 
@@ -91,3 +91,4 @@ export const variablesDelete = async(req,res) => {
         res.status(500).json({message: "error en el servidor"})
     }   
 }
+

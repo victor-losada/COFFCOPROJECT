@@ -16,7 +16,7 @@
  import Routerlogos from "./src/routes/RouterLogos.js"
  import RouterReportes from "./src/routes/ReportesEstadisticos.js"
  import RouterFacturas from "./src/routes/RouterFacturas.js"
-
+ import RouterContraseña from "./src/routes/RouterContraseña.js"
 
  const project = express()
  project.use(bodyParser.json())
@@ -40,6 +40,8 @@
  project.use('/valores', RouterValor)
  project.use('/reportes',RouterReportes)
  project.use('/facturas', RouterFacturas)
+ project.use('/contrasena',  RouterContraseña)
+
  const PORT = 3000
  project.listen(PORT, () => {
     console.log(`servidor corriendo en el puerto ${PORT}`)
