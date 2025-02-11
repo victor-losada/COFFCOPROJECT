@@ -1,27 +1,27 @@
-Este sistema tiene como objetivo principal optimizar la administración de documentos y servicios asociados a la institución, incluyendo el registro, trazabilidad y control de versiones de los documentos, así como la gestión de servicios como tostión, trilla, análisis físico-sensorial, y alquiler de laboratorio.
+This system aims primarily to optimize the management of documents and services associated with the institution, including the registration, traceability, and version control of documents, as well as the management of services such as toasting, grinding, physical-sensory analysis, and laboratory rental.
 
-* Detalles principales del proyecto:
-Propósito: Proveer una solución robusta y flexible que permita una mejor organización, seguridad y accesibilidad a la información, facilitando la administración eficiente de documentos y servicios.
+* Main project details:
+Purpose: To provide a robust and flexible solution that allows for better organization, security, and accessibility to information, facilitating the efficient management of documents and services.
 
-* Alcance:
+* Scope:
 
-Control completo de la gestión documental.
-Administración de formularios para la entrada y salida de servicios.
-Preservación y trazabilidad de información en tiempo real.
-Gestión de precios, usuarios, ambientes y reportes estadísticos.
-Características clave:
+Complete control of document management.
+Administration of forms for the entry and exit of services.
+Preservation and real-time traceability of information.
+Management of prices, users, environments, and statistical reports.
+Key features:
 
-Interfaces intuitivas para usuarios con roles específicos (administrador, encargado, operario, cliente).
-Módulos para administrar documentos, servicios, usuarios, ambientes, precios, reportes, y más.
-Generación automatizada de reportes en formatos como PDF.
-Seguridad en la gestión de datos y sesiones de usuario.
-Requisitos técnicos:
+Intuitive interfaces for users with specific roles (administrator, person in charge, operator, client).
+Modules to manage documents, services, users, environments, prices, reports, and more.
+Automated report generation in formats such as PDF.
+Data management and user session security.
+Technical requirements:
 
-Multiplataforma, compatible con sistemas operativos como Windows, macOS y Linux.
-Navegadores compatibles: Chrome, Firefox, Edge y Safari.
-Infraestructura basada en intranet, limitando el acceso a usuarios internos.
+Multiplatform, compatible with operating systems such as Windows, macOS, and Linux.
+Compatible browsers: Chrome, Firefox, Edge, and Safari.
+Intranet-based infrastructure, limiting access to internal users.
 
-* Restricciones:
+* Restrictions:
 
-Desarrollo exclusivo para la escuela, limitado a su infraestructura.
-Equipo de desarrollo inexperto, lo que puede impactar el plazo y la calidad.
+Development exclusively for the school, limited to its infrastructure.
+Inexperienced development team, which may impact the timeline and quality..
